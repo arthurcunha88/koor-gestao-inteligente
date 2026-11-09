@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#FAF6F1">
+ <meta name="description" content="Koor — Gestão Inteligente. Estudos, referências, casos e ferramentas para liderar equipes com clareza e responsabilidade.">
+ <meta property="og:title" content="Koor — Gestão Inteligente">
+ <meta property="og:description" content="Estudo e prática para quem coordena pessoas e decisões.">
+ <meta property="og:type" content="website">
+ <title>Koor — Gestão Inteligente | Hub de liderança</title>
+ <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+ <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+
+:root{--paper:#FAF6F1;--sand:#EADBCF;--ink:#2E1A10;--accent:#6B3E26;--border:rgba(46,26,16,.21);--line:rgba(46,26,16,.13);--ease:cubic-bezier(.22,1,.36,1);--display:Georgia,'Times New Roman',serif;--body:Arial,Helvetica,sans-serif;--mono:Arial,Helvetica,sans-serif;font-synthesis:none;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:450;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}svg{display:block}img{max-width:100%;display:block}::selection{background:var(--accent);color:var(--paper)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.shell{width:min(100% - 76px,1380px);margin:0 auto}.hairline{height:1px;background:var(--border)}
+.micro{font:500 10.5px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.12em}.kicker{font:500 11px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--accent);display:flex;gap:14px;align-items:center}.kicker:before{content:'';display:block;width:23px;height:1px;background:currentColor}
+.serif{font-family:var(--display);font-weight:400;letter-spacing:-.045em;line-height:.96}.serif em{font-weight:400}
+.body-muted{opacity:.73}.section-title{font-size:clamp(44px,5.3vw,79px);margin:15px 0 0;max-width:12.8ch}
+.subline{font-size:15px;line-height:1.75;max-width:60ch}
+.site-header{position:sticky;top:0;z-index:40;background:rgba(250,246,241,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
+.top-strip{height:28px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;font:400 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:0 38px}
+.header-main{height:86px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
+.brand{display:inline-flex;align-items:center;gap:11px;width:max-content;min-width:0}.brand svg{width:40px;height:40px;flex:0 0 40px}.brand-word{font-weight:700;font-size:31px;letter-spacing:-.085em;line-height:1}.brand-caption{display:block;font:400 9px var(--mono);text-transform:uppercase;letter-spacing:.09em;margin-top:5px;opacity:.68}.brand-type{display:flex;flex-direction:column}
+.main-nav{display:flex;align-items:stretch;gap:0;height:100%}.nav-btn{position:relative;border:0;background:transparent;color:var(--ink);font-size:12px;font-weight:600;letter-spacing:-.01em;padding:0 16px;white-space:nowrap}.nav-btn:after{content:'';position:absolute;left:16px;right:16px;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--ease)}.nav-btn:hover:after,.nav-btn.is-active:after{transform:scaleX(1)}.nav-btn:hover{opacity:.7}.header-right{justify-self:end;display:flex;gap:18px;align-items:center}.header-edition{font:400 10px var(--mono);letter-spacing:.02em;opacity:.65}.header-tool{border:1px solid var(--border);background:transparent;width:38px;height:38px;display:grid;place-items:center;position:relative}.header-tool svg{width:16px}.header-tool:hover svg{transform:translateX(2px)}.header-tool svg{transition:transform .2s var(--ease)}
+.scroll-progress{position:absolute;bottom:-2px;left:0;width:100%;height:2px;background:var(--accent);transform-origin:left;transform:scaleX(0);pointer-events:none;z-index:2}
+.arrow{font-size:22px;font-weight:400;line-height:1;display:inline-block;transition:transform .22s var(--ease)}a:hover .arrow,button:hover .arrow{transform:translate(4px,-3px)}
+.site-footer{background:var(--ink);color:var(--paper);padding:42px 0 25px;margin-top:0}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}.footer-mark{display:flex;align-items:center;gap:14px;font:600 45px var(--body);letter-spacing:-.09em}.footer-mark svg{width:46px;height:46px}.footer-description{max-width:38ch;font-size:14px;line-height:1.7;opacity:.7;margin:12px 0}.footer-head{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.62;margin-bottom:16px}.footer-links{display:flex;flex-direction:column;align-items:start;gap:8px}.footer-links button,.footer-links a{border:0;background:transparent;padding:0;color:inherit;font-size:13px;opacity:.86;text-align:left}.footer-links button:hover,.footer-links a:hover{opacity:.6}.footer-bottom{border-top:1px solid rgba(250,246,241,.19);display:flex;justify-content:space-between;padding-top:20px;margin-top:60px;gap:20px;font:400 10px var(--mono);opacity:.6}
+/* HOME — editorial split */
+.home-hero{min-height:640px;display:grid;grid-template-columns:minmax(0,1.11fr) minmax(360px,.89fr);border-bottom:1px solid var(--border)}
+.home-left{position:relative;padding:79px 5.2vw 42px 0;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.hero-overline{display:flex;align-items:center;gap:13px}.tiny-line{display:block;width:33px;height:1px;background:currentColor}
+.home-title{font-size:clamp(73px,8.3vw,134px);margin:35px 0 35px;max-width:8.7ch}.home-title .last{display:block;margin-left:1.35ch}.home-intro{display:flex;align-items:flex-end;gap:40px;justify-content:space-between;width:100%;padding-top:16px}.home-intro p{font-size:16px;max-width:370px;line-height:1.75;margin:0}.solid-link{display:inline-flex;align-items:center;justify-content:space-between;gap:36px;background:var(--accent);color:var(--paper);padding:15px 20px;font-size:12px;font-weight:650;min-height:51px;border:1px solid var(--accent);transition:opacity .19s var(--ease),transform .19s var(--ease)}.solid-link:hover{opacity:.9;transform:translateY(-2px)}.solid-link:active{transform:translateY(0)}
+.home-right{min-height:640px;background:var(--accent);color:var(--paper);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:32px}.home-right-top{display:flex;justify-content:space-between;gap:20px;position:relative;z-index:1}.home-right .mark-art{width:130%;height:auto;max-height:465px;align-self:center;margin:8px -12% 0;opacity:.96}.mark-art .circle-stroke{fill:none;stroke:var(--sand);stroke-width:.65;opacity:.42}.home-right-bottom{display:grid;grid-template-columns:1fr auto;align-items:end;gap:20px;position:relative;z-index:2;border-top:1px solid rgba(250,246,241,.35);padding-top:16px}.home-right-bottom strong{font:400 clamp(28px,2.7vw,43px)/1.01 var(--display);letter-spacing:-.02em;max-width:12ch}.home-right-bottom .micro{max-width:12ch;text-align:right;opacity:.65}
+.home-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}.stat{min-height:108px;padding:22px 22px 20px 0;border-right:1px solid var(--border);display:flex;align-items:center;gap:18px}.stat:not(:first-child){padding-left:24px}.stat:last-child{border-right:0}.stat-number{font:400 56px/.85 var(--display);letter-spacing:-.05em}.stat-label{font:400 10px/1.6 var(--mono);text-transform:uppercase;letter-spacing:.03em;max-width:110px;opacity:.76}
+.block-section{padding:106px 0 114px}.block-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:42px}.block-head p{max-width:305px;line-height:1.65;margin-bottom:6px;font-size:14px}
+.module-grid{display:grid;grid-template-columns:1.26fr 1fr 1fr;grid-template-rows:295px 295px;gap:1px;background:var(--border);border:1px solid var(--border)}
+.module-card{display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);padding:23px;position:relative;overflow:hidden;text-align:left;border:0;color:var(--ink);transition:opacity .16s var(--ease)}.module-card:hover{background:var(--sand)}.module-card.featured{grid-row:span 2;padding:30px;background:var(--sand)}.module-card.featured:hover{background:var(--paper)}
+.module-card-header{display:flex;align-items:center;justify-content:space-between}.module-card-header .num{font:400 13px var(--mono)}.module-card .card-title{font:400 clamp(32px,3vw,44px)/1 var(--display);letter-spacing:-.03em;max-width:13ch}.module-card.featured .card-title{font-size:clamp(50px,5.1vw,73px);line-height:.93;max-width:10ch}.module-card .card-summary{font-size:13px;line-height:1.6;max-width:34ch;margin:18px 0 0;opacity:.74}.module-card.featured .card-summary{font-size:15px;max-width:28ch}.module-card-feature{width:190px;height:190px;align-self:flex-end;margin-top:-35px;opacity:.76;flex:1;display:flex;justify-content:center;align-items:center}.module-card-feature svg{width:100%}.module-card .card-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:13px;margin-top:28px;font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.07em}
+.lens-section{background:var(--sand);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:105px 0}.lenses-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:49px;border-top:1px solid var(--border);border-left:1px solid var(--border)}.lens-card{min-height:352px;padding:28px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between}.lens-heading{font:400 51px/.97 var(--display);letter-spacing:-.04em;max-width:8ch;margin:24px 0}.lens-body{font-size:13.5px;line-height:1.72;max-width:32ch}.lens-footer{border-top:1px solid var(--border);padding-top:17px;display:flex;align-items:center;justify-content:space-between;gap:10px}.lens-footer a{font-weight:650;font-size:12px;border-bottom:1px solid var(--ink)}
+.comparison{display:grid;grid-template-columns:1fr 1fr;margin-top:47px;border:1px solid var(--border)}.comparison-col{padding:30px}.comparison-col:first-child{border-right:1px solid var(--border)}.comparison-col h3{font:400 39px var(--display);margin:6px 0 30px}.comparison-row{padding:17px 0;border-top:1px solid var(--border);min-height:77px;display:flex;align-items:center;font-size:14px;line-height:1.6}.comparison-col.strong{background:var(--sand)}
+.home-quote{background:var(--ink);color:var(--paper);padding:90px 0}.home-quote .quote-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:end}.home-quote blockquote{font:400 clamp(40px,5vw,75px)/1.06 var(--display);letter-spacing:-.03em;margin:0}.home-quote .quote-bottom{margin-top:35px;display:flex;align-items:end;justify-content:space-between;gap:24px}.outline-link{display:inline-flex;align-items:center;gap:18px;border-bottom:1px solid currentColor;padding-bottom:9px;font-size:13px;font-weight:650}
+/* INNER PAGES */
+.page-intro{padding:86px 0 74px;border-bottom:1px solid var(--border)}.page-intro-grid{display:grid;grid-template-columns:1.22fr .78fr;gap:60px}.page-title{font-size:clamp(72px,8vw,122px);max-width:10ch;margin:22px 0 26px}.page-summary{font-size:17px;line-height:1.75;max-width:620px}.page-side{border-left:1px solid var(--border);padding:14px 0 12px 32px;display:flex;flex-direction:column;justify-content:space-between}.page-side .side-number{font:400 clamp(110px,15vw,230px)/.86 var(--display);letter-spacing:-.065em;opacity:.83}.page-side p{max-width:30ch;font-size:13px;line-height:1.7;margin:25px 0 0}
+.chapter-nav{border-bottom:1px solid var(--border);position:sticky;top:115px;z-index:25;background:var(--paper)}.chapter-nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:63px}.chapter-tabs{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none}.chapter-tabs a{font-size:11px;font-weight:600;white-space:nowrap;padding:20px 0;transition:opacity .2s}.chapter-tabs a:hover{opacity:.6}.chapter-nav .micro{opacity:.5}
+.topic-section{padding:97px 0;border-bottom:1px solid var(--border)}.topic-section-head{display:grid;grid-template-columns:.77fr 1.23fr;gap:65px;margin-bottom:39px}.topic-section-head h2{font-size:clamp(42px,5vw,70px);margin:10px 0 0;max-width:12ch}.topic-section-head p{max-width:550px;font-size:14px;line-height:1.78;margin:19px 0 0}
+.foundation-list{border-top:1px solid var(--border)}.foundation-item{display:grid;grid-template-columns:52px minmax(240px,.68fr) minmax(250px,1fr);gap:25px;border-bottom:1px solid var(--border);padding:28px 0;align-items:start}.foundation-item .f-number{font:400 13px var(--mono);padding-top:9px}.foundation-name{font:400 clamp(28px,3vw,42px)/1.02 var(--display);max-width:13ch;margin:0}.foundation-author{font:500 10px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.04em;margin-top:17px;opacity:.62}.foundation-description{font-size:14px;line-height:1.85;margin:0 0 15px}.foundation-apply{border-left:2px solid var(--accent);padding-left:14px;font-size:13px;line-height:1.65}.foundation-apply b{display:block;font:500 10px var(--mono);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
+.cycle-header{border-top:1px solid var(--border);padding:16px 0 26px;display:flex;align-items:start;justify-content:space-between;gap:20px}.cycle-name{font:400 clamp(46px,6vw,74px)/1 var(--display)}.cycle-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}.cycle-step{background:var(--sand);padding:24px;min-height:230px}.cycle-step .cycle-index{font:400 12px var(--mono)}.cycle-step h3{font:400 37px/.95 var(--display);margin:45px 0 13px}.cycle-step p{font-size:13px;line-height:1.62;margin:0}
+.trap-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.trap-card{padding:28px 24px 36px;border-top:2px solid var(--accent);background:var(--sand)}.trap-card h3{font:400 32px/1 var(--display);margin:24px 0 16px}.trap-card p{font-size:13px;line-height:1.8;margin:0}
+.scenario{display:grid;grid-template-columns:.8fr 1.2fr;border:1px solid var(--border)}.scenario-intro{background:var(--accent);color:var(--paper);padding:36px;display:flex;flex-direction:column;justify-content:space-between;min-height:415px}.scenario-intro h3{font:400 50px/.99 var(--display);margin:32px 0;max-width:10ch}.scenario-intro p{font-size:14px;line-height:1.7;opacity:.84;max-width:32ch}.scenario-body{padding:34px}.scenario-options{display:flex;flex-direction:column;gap:12px;margin-top:25px}.scenario-option{width:100%;display:flex;gap:18px;align-items:center;text-align:left;border:1px solid var(--border);background:transparent;padding:17px 18px;font-size:13px;line-height:1.5;position:relative;transition:transform .18s var(--ease)}.scenario-option:hover{transform:translateX(3px)}.scenario-option.chosen{background:var(--sand);border-color:var(--accent)}.scenario-letter{font:400 12px var(--mono);min-width:22px;opacity:.6}.scenario-feedback{padding:20px 22px;background:var(--sand);margin-top:16px;border-left:2px solid var(--accent)}.scenario-feedback strong{display:block;font-size:13px;margin-bottom:5px}.scenario-feedback p{font-size:13px;line-height:1.65;margin:0}
+.plan-layout{display:grid;grid-template-columns:1fr 330px;gap:35px;align-items:start}.plan-list{border-top:1px solid var(--border)}.plan-item{display:grid;grid-template-columns:27px 60px minmax(0,1fr);align-items:start;gap:15px;padding:18px 0;border-bottom:1px solid var(--border);cursor:pointer}.plan-item input{appearance:none;width:19px;height:19px;border:1px solid var(--accent);background:transparent;margin-top:5px;display:grid;place-items:center;cursor:pointer}.plan-item input:checked{background:var(--accent)}.plan-item input:checked:before{content:'✓';color:var(--paper);font:600 12px var(--body)}.plan-day{font:500 10px var(--mono);opacity:.65;margin-top:7px}.plan-item b{display:block;font-size:14px;margin-bottom:4px}.plan-item small{font-size:12px;line-height:1.65;display:block;opacity:.7}
+.plan-aside{padding:27px;background:var(--sand);border:1px solid var(--border);position:sticky;top:190px}.plan-aside .big-percent{font:400 83px/.9 var(--display);margin:15px 0 20px}.progress-rail{height:5px;background:rgba(46,26,16,.16);overflow:hidden}.progress-fill{height:100%;background:var(--accent);transform-origin:left;transition:transform .3s var(--ease)}.plan-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:26px}.mini-button{background:transparent;border:1px solid var(--border);padding:9px 12px;font-size:11px;font-weight:650;min-height:38px}.mini-button:hover{background:rgba(46,26,16,.07)}.plan-aside p{font-size:12px;line-height:1.7;margin:18px 0 0}
+.data-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}.data-table th{text-align:left;font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.09em;opacity:.65;padding:15px 12px 18px 0;border-bottom:1px solid var(--border)}.data-table td{padding:20px 18px 20px 0;vertical-align:top;border-bottom:1px solid var(--border);line-height:1.7}.data-table td:first-child{font-weight:700}.data-table th:nth-child(1){width:26%}.data-table th:nth-child(2){width:39%}.data-table th:nth-child(3){width:35%}
+.reference-mini{border:1px solid var(--border);padding:20px;display:flex;align-items:center;justify-content:space-between;gap:25px}.reference-mini a{border-bottom:1px solid var(--ink);font-weight:600;font-size:12px}
+.topic-next{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}.topic-next button{padding:35px;min-height:180px;background:var(--sand);border:0;text-align:left;color:var(--ink)}.topic-next button+button{border-left:1px solid var(--border)}.topic-next .next-title{font:400 40px var(--display);display:block;margin-top:12px}
+/* Laboratory */
+.lab-selector{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin-top:36px}.lab-select{padding:20px;border:0;text-align:left;border-right:1px solid var(--border);background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:80px}.lab-select:last-child{border-right:0}.lab-select.is-active{background:var(--sand)}.lab-select b{font-weight:700;font-size:14px}.lab-select span{font:400 11px var(--mono)}
+.lab-canvas{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--border);border-top:0;min-height:520px}.lab-brief{background:var(--sand);padding:35px;display:flex;flex-direction:column;justify-content:space-between;gap:38px;border-right:1px solid var(--border)}.lab-brief h2{font:400 clamp(43px,4vw,64px)/.98 var(--display);margin:17px 0 20px;max-width:11ch}.lab-brief p{font-size:14px;line-height:1.8;max-width:32ch}.lab-panel{padding:38px}.field{display:flex;flex-direction:column;gap:9px;margin-bottom:19px}.field label{font:500 11px/1.5 var(--mono);letter-spacing:.03em}.field input,.field textarea,.field select,.search-field{width:100%;border:1px solid var(--border);background:transparent;padding:13px 15px;border-radius:0;color:var(--ink);outline-offset:2px;font:450 13px var(--body)}.field textarea{min-height:80px;resize:vertical;line-height:1.6}.field select{appearance:auto}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tool-output{border:1px solid var(--border);padding:23px;margin:25px 0 0;background:var(--paper)}.tool-output h3{font:400 32px var(--display);margin:2px 0 15px}.tool-output p{font-size:13px;line-height:1.8}.tool-output ul{margin:0;padding-left:17px;font-size:13px;line-height:1.85}.result-label{display:block;font:500 10px var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:8px}.tool-output pre{white-space:pre-wrap;overflow-wrap:anywhere;font:450 12px/1.75 var(--body);margin:0}.tool-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.tool-note{border-top:1px solid var(--border);padding-top:14px;font:400 11px/1.7 var(--mono);opacity:.68;margin-top:25px}
+/* LIBRARY */
+.library-controls{display:grid;grid-template-columns:1fr 215px 130px;gap:12px;margin:37px 0 23px}.library-count{font:400 11px var(--mono);opacity:.75;margin-bottom:18px}.source-row{display:grid;grid-template-columns:90px minmax(0,1.7fr) minmax(150px,.65fr) 40px;gap:20px;align-items:center;border-top:1px solid var(--border);padding:24px 0}.source-row:last-child{border-bottom:1px solid var(--border)}.source-index{font:400 11px var(--mono);opacity:.65}.source-title{font:400 29px/.99 var(--display);margin:0 0 8px}.source-author{font-size:12px;opacity:.7}.source-type{font:400 11px var(--mono);text-transform:uppercase}.source-arrow{border:1px solid var(--border);width:35px;height:35px;display:grid;place-items:center}.source-row:hover .source-arrow{transform:translate(3px,-2px)}.source-arrow{transition:transform .18s var(--ease)}
+.feature-books{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:38px 0 55px}.feature-book{background:var(--sand);min-height:300px;padding:25px;display:flex;flex-direction:column;justify-content:space-between}.feature-book h3{font:400 40px/.98 var(--display);margin:13px 0}.feature-book p{font-size:13px;line-height:1.7;opacity:.8}.feature-book a{font-size:12px;border-bottom:1px solid var(--ink);width:max-content;max-width:100%}.book-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:20px}.book-links a:nth-child(2){opacity:.68;font-size:11px}.library-note{border-left:2px solid var(--accent);padding:5px 0 5px 17px;font-size:13px;line-height:1.8;max-width:80ch;margin-top:24px}
+/* ABOUT */
+.about-statement{background:var(--accent);color:var(--paper);padding:93px 0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.about-statement h2{font:400 clamp(65px,7vw,105px)/.98 var(--display);letter-spacing:-.04em;margin:18px 0 25px}.about-statement p{font-size:14px;line-height:1.85;max-width:58ch}.about-logo{width:100%;height:440px;max-width:500px;margin:auto}.belief-list{border-top:1px solid var(--border)}.belief-row{display:grid;grid-template-columns:70px 1fr 1.2fr;gap:25px;border-bottom:1px solid var(--border);padding:29px 0;align-items:start}.belief-row h3{font:400 39px/1 var(--display);margin:0}.belief-row p{font-size:14px;line-height:1.75;margin:0}.source-method{display:grid;grid-template-columns:1fr 1fr;gap:34px}.source-method>div{padding:27px;background:var(--sand)}.source-method h3{font:400 36px var(--display);margin:13px 0}.source-method p{font-size:13px;line-height:1.8}
+
+/* Visual frameworks / 3 lenses */
+.models-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:36px 0 0}.model-pane{padding:37px;background:var(--paper);min-width:0}.model-pane h3{font:400 43px/1 var(--display);letter-spacing:-.03em;margin:19px 0}.model-pane p{font-size:13px;line-height:1.8;max-width:52ch}.model-pane.ink{background:var(--sand)}
+.golden-diagram{height:325px;display:grid;place-items:center;margin:7px 0 18px}.golden-ring{border:1px solid var(--accent);border-radius:50%;position:relative;display:grid;place-items:center;background:var(--paper);flex:none}.golden-ring.outer{width:310px;height:310px}.golden-ring.middle{width:228px;height:228px;background:var(--sand)}.golden-ring.inner{width:135px;height:135px;background:var(--accent);color:var(--paper);font:500 11px var(--mono);letter-spacing:.1em}.ring-label{position:absolute;top:15px;left:50%;transform:translateX(-50%);font:500 10px var(--mono);letter-spacing:.07em;white-space:nowrap}.golden-ring.middle>.ring-label{top:19px}.model-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:37px}.model-pair>div{background:var(--paper);padding:22px;min-height:155px}.model-pair strong{font:400 31px var(--display);display:block;margin:13px 0}.model-pair p{font-size:12px;line-height:1.7}.pipeline-list{border-top:1px solid var(--border);margin-top:27px}.pipeline-item{display:grid;grid-template-columns:40px 1fr;gap:14px;border-bottom:1px solid var(--border);padding:13px 0}.pipeline-item span{font:400 12px var(--mono);opacity:.56;padding-top:4px}.pipeline-item b{font-weight:600;font-size:13px;display:block}.pipeline-item p{font-size:12px;line-height:1.55;margin:5px 0 0;opacity:.7}
+@media(max-width:800px){.models-grid{grid-template-columns:1fr}.model-pane{padding:27px}}
+@media(max-width:540px){.golden-ring.outer{width:260px;height:260px}.golden-ring.middle{width:190px;height:190px}.golden-ring.inner{width:112px;height:112px}.golden-diagram{height:275px}.model-pair{grid-template-columns:1fr}}
+.about-logo svg{width:100%;height:100%}
+
+/* Animation */
+.first-in{opacity:0;transform:translateY(16px);animation:enter .9s var(--ease) both;animation-delay:var(--delay,0ms)}@keyframes enter{to{opacity:1;transform:translateY(0)}}
+[data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}[data-reveal].shown{opacity:1;transform:translateY(0)}
+.toast{position:fixed;right:25px;bottom:25px;z-index:90;background:var(--ink);color:var(--paper);padding:13px 17px;min-width:200px;font:500 12px var(--body);opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .23s var(--ease),transform .23s var(--ease)}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1120px){.shell{width:min(100% - 48px,1380px)}.home-title{font-size:clamp(63px,8.7vw,113px)}.home-intro{flex-direction:column;align-items:flex-start;gap:20px}.header-main{grid-template-columns:auto 1fr auto;gap:15px}.nav-btn{padding:0 11px}.module-grid{grid-template-columns:1.1fr 1fr 1fr}.module-card.featured .card-title{font-size:60px}.foundation-item{grid-template-columns:45px minmax(215px,.8fr) 1fr;gap:20px}}
+@media(max-width:800px){.shell{width:min(100% - 36px,1380px)}.top-strip{padding:0 18px}.header-main{height:auto;min-height:77px;display:flex;justify-content:space-between;flex-wrap:wrap;padding:15px 0 0;gap:12px}.main-nav{width:100%;order:3;overflow-x:auto;height:45px;justify-content:flex-start;scrollbar-width:none}.nav-btn{padding:0 18px 0 0;font-size:12px}.nav-btn:after{left:0;right:18px}.brand svg{width:34px;height:34px;flex-basis:34px}.brand-word{font-size:27px}.header-edition{display:none}.chapter-nav{top:128px}.home-hero{display:flex;flex-direction:column}.home-left{padding:55px 0 44px;min-height:510px}.home-title{font-size:clamp(80px,12vw,115px)}.home-right{min-height:480px;padding:26px}.home-right .mark-art{width:min(100%,500px);height:auto;margin:0 auto}.home-stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--border)}.module-grid{grid-template-columns:1fr 1fr;grid-template-rows:450px 250px 250px}.module-card.featured{grid-row:1;grid-column:span 2}.module-card.featured .card-title{font-size:76px}.module-card-feature{width:135px;height:135px}.lenses-grid,.feature-books{grid-template-columns:1fr}.lens-card{min-height:275px}.lens-heading{margin:25px 0 10px}.block-section,.lens-section{padding:75px 0}.home-quote .quote-grid{grid-template-columns:1fr;gap:23px}.page-intro-grid{grid-template-columns:1fr}.page-side{border-left:0;border-top:1px solid var(--border);padding:18px 0 0;flex-direction:row;gap:30px;align-items:center}.page-side .side-number{font-size:110px}.page-intro{padding:63px 0}.page-title{font-size:clamp(68px,10vw,90px)}.topic-section-head{grid-template-columns:1fr;gap:10px}.foundation-item{grid-template-columns:30px 1fr;gap:17px}.foundation-description-wrap{grid-column:2}.cycle-steps,.trap-list{grid-template-columns:1fr 1fr}.scenario{grid-template-columns:1fr}.scenario-intro{min-height:275px}.plan-layout{grid-template-columns:1fr}.plan-aside{position:static}.lab-canvas{grid-template-columns:1fr}.lab-brief{min-height:220px;border-right:0;border-bottom:1px solid var(--border)}.about-grid{grid-template-columns:1fr}.about-logo{height:310px;max-width:350px}.source-method{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:span 2}.library-controls{grid-template-columns:1fr 1fr}.library-controls .search-field{grid-column:span 2}}
+@media(max-width:540px){html{scroll-padding-top:155px}.top-strip .top-strip-right{display:none}.top-strip{justify-content:center;font-size:8px}.header-tool{width:34px;height:34px}.chapter-nav{top:124px}.home-left{min-height:520px;padding:45px 0 40px}.home-title{font-size:clamp(65px,16.5vw,91px);margin:31px 0}.home-title .last{margin-left:.7ch}.home-intro p{font-size:14px}.home-right{min-height:400px}.home-right-bottom strong{font-size:35px}.stat{padding:20px 10px 20px 0;gap:12px}.stat:not(:first-child){padding-left:15px}.stat-number{font-size:51px}.stat-label{font-size:9px}.block-head{display:block}.block-head p{margin-top:20px}.section-title{font-size:55px}.module-grid{display:flex;flex-direction:column;gap:1px}.module-card{min-height:220px}.module-card.featured{min-height:410px}.module-card.featured .card-title{font-size:58px}.module-card-feature{width:105px;height:105px;position:absolute;right:30px;top:155px;opacity:.35}.module-card .card-title{font-size:40px}.lenses-grid{margin-top:32px}.lens-card{min-height:290px}.comparison{grid-template-columns:1fr}.comparison-col:first-child{border-right:0;border-bottom:1px solid var(--border)}.home-quote{padding:64px 0}.home-quote blockquote{font-size:51px}.page-title{font-size:clamp(62px,14vw,83px)}.page-summary{font-size:15px}.page-side .side-number{font-size:90px}.topic-section{padding:70px 0}.topic-section-head h2{font-size:53px}.foundation-item{grid-template-columns:22px 1fr}.foundation-name{font-size:36px}.cycle-steps,.trap-list{grid-template-columns:1fr}.cycle-step{min-height:170px}.cycle-step h3{margin:28px 0 10px}.scenario-intro{padding:25px;min-height:280px}.scenario-intro h3{font-size:47px}.scenario-body{padding:23px}.data-table{font-size:11px}.data-table th{font-size:8px}.data-table td{padding:14px 9px 14px 0}.topic-next button{padding:18px}.topic-next .next-title{font-size:30px}.lab-selector{display:flex;flex-direction:column}.lab-select{border-right:0;border-bottom:1px solid var(--border);min-height:55px;padding:14px}.lab-select:last-child{border-bottom:0}.lab-panel{padding:22px}.lab-brief{padding:24px}.field-grid{grid-template-columns:1fr;gap:0}.library-controls{grid-template-columns:1fr}.library-controls .search-field{grid-column:1}.source-row{grid-template-columns:35px minmax(0,1fr) 34px;gap:12px;padding:20px 0}.source-type{display:none}.source-title{font-size:25px}.library-note{font-size:12px}.belief-row{grid-template-columns:34px 1fr;gap:15px}.belief-row p{grid-column:2}.footer-grid{gap:30px}.footer-bottom{flex-direction:column;gap:7px}.reference-mini{display:block}.reference-mini a{display:inline-block;margin-top:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.first-in{animation:none;opacity:1;transform:none}[data-reveal]{transition:none;opacity:1;transform:none}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media print{.site-header,.site-footer,.chapter-nav,.lab-selector,.solid-link,.topic-next,.plan-buttons,.tool-actions{display:none!important}body{background:#fff}.shell{width:100%}.page-intro,.topic-section{padding:30px 0}.first-in,[data-reveal]{opacity:1!important;transform:none!important}.scenario-intro,.home-quote{color:var(--ink);background:transparent}.plan-aside{position:static}}
+
+@media(max-width:800px){.pipeline-model-grid{grid-template-columns:1fr!important;gap:20px!important}}
+
+/* KOOR / EDIÇÃO EDITORIAL 02
+   Um projeto com hierarquia de leitura, não uma coleção de componentes de SaaS.
+   Paleta estritamente limitada aos quatro tokens da marca. */
+:root{--koor-header-h:114px;--ease:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:calc(var(--koor-header-h) + 80px)}
+body{font-optical-sizing:auto}
+.site-header{backdrop-filter:none;background:var(--paper)}
+.top-strip{font-size:10px;letter-spacing:.055em}
+.main-nav .nav-btn{transition:opacity .16s var(--ease)}
+.nav-btn:hover{opacity:.68}
+.nav-btn:active,.header-tool:active,.solid-link:active{transform:translateY(1px)}
+.chapter-nav{top:var(--koor-header-h)}
+.micro{letter-spacing:.09em}
+.kicker{letter-spacing:.075em;font-size:11px}
+.kicker:before{width:13px}
+/* Motion is opt-in only after JS verifies IntersectionObserver and user motion preferences.
+   Without JS, all article sections remain legible and visible. */
+.first-in{opacity:0;transform:translate3d(0,13px,0);animation:koor-intro .65s var(--ease) both;animation-delay:var(--delay,0ms)}
+@keyframes koor-intro{to{opacity:1;transform:translate3d(0,0,0)}}
+[data-reveal]{opacity:1;transform:none;transition:none}
+.motion-enabled [data-reveal]:not(.shown){opacity:0;transform:translate3d(0,16px,0)}
+.motion-enabled [data-reveal]{transition:opacity .66s var(--ease),transform .66s var(--ease)}
+@media(prefers-reduced-motion:reduce){.first-in{animation:none!important;opacity:1!important;transform:none!important}.motion-enabled [data-reveal],.motion-enabled [data-reveal]:not(.shown){opacity:1!important;transform:none!important;transition:none!important}}
+/* Hero: one confident idea, brand as an actual editorial anchor. */
+.home-hero{grid-template-columns:minmax(0,1.14fr) minmax(360px,.86fr);min-height:640px}
+.home-left{padding:77px clamp(30px,4vw,68px) 45px 0;justify-content:space-between;gap:40px}
+.hero-overline{font:500 11px/1.5 var(--mono);letter-spacing:.055em;max-width:35ch;color:var(--accent);margin:0}
+.home-title{font-size:clamp(72px,7.8vw,123px);max-width:10ch;margin:0;line-height:.94;letter-spacing:-.055em;text-wrap:balance}
+.home-title em{color:var(--accent)}
+.home-intro{gap:25px;align-items:flex-end;padding:0}
+.home-intro p{max-width:360px;font-size:16px;line-height:1.63}
+.solid-link{position:relative;overflow:hidden;white-space:nowrap;transition:transform .22s var(--ease),opacity .22s var(--ease)}
+.solid-link:hover{transform:translate3d(0,-2px,0);background:var(--ink)}
+.home-right{padding:30px 32px 34px;min-height:640px}
+.home-right-top{border-bottom:1px solid rgba(250,246,241,.26);padding-bottom:17px}
+.hero-emblem{display:flex;flex:1;min-height:280px;position:relative;align-items:center;justify-content:center}
+.hero-logo{width:min(76%,380px);height:auto;aspect-ratio:1;opacity:.98}
+.hero-emblem-caption{position:absolute;bottom:20px;left:4px;font:400 13px/1.5 var(--mono);letter-spacing:0;opacity:.75}
+.home-right-bottom{grid-template-columns:1fr auto;gap:25px;align-items:end}
+.home-right-bottom strong{font-size:clamp(27px,2.45vw,38px);line-height:1.04}
+.hero-side-link{font:500 12px var(--body);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid currentColor;padding-bottom:9px;transition:opacity .18s var(--ease)}
+.hero-side-link:hover{opacity:.7}
+/* Useful entry guide replaces manufactured statistics. */
+.entry-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(230px,.75fr);gap:50px;align-items:end;padding:60px 0 24px}
+.section-eyebrow{font:500 12px/1.4 var(--body);letter-spacing:0;color:var(--accent);display:inline-block;border-left:2px solid var(--accent);padding-left:12px}
+.entry-intro h2{font:400 clamp(35px,4.3vw,62px)/1 var(--display);letter-spacing:-.04em;margin:16px 0 0;max-width:16ch}
+.entry-intro p{font-size:14px;line-height:1.8;max-width:48ch;opacity:.83;margin:0}
+.entry-table{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.entry-row{display:grid;grid-template-columns:54px minmax(0,1.15fr) minmax(220px,.9fr) 25px;align-items:center;gap:27px;padding:23px 13px 23px 0;border-bottom:1px solid var(--border);transition:opacity .18s var(--ease);min-height:100px}
+.entry-row:last-child{border-bottom:0}
+.entry-row:hover{background:var(--sand)}
+.entry-n{font:400 13px var(--mono);opacity:.6}
+.entry-question{font:400 clamp(21px,2vw,30px)/1.05 var(--display);letter-spacing:-.025em;max-width:29ch}
+.entry-answer strong{display:block;font-size:13px;font-weight:650;margin-bottom:5px}
+.entry-answer small{display:block;max-width:46ch;font-size:12px;line-height:1.5;opacity:.73}
+.entry-arrow{display:inline-flex;justify-content:flex-end}
+/* Apply craft to existing modules, avoid universal cards. */
+.module-card{transition:opacity .2s var(--ease)}
+.module-card:not(.featured):hover{background:var(--sand)}
+.module-card.featured{background:var(--sand)}
+.module-card-feature{opacity:.5}
+.module-card .card-summary{opacity:.8}
+.module-card .card-foot{font-family:var(--body);font-size:11px;letter-spacing:0;text-transform:none}
+.block-head p{font-size:14px;line-height:1.75;max-width:340px}
+/* References as a reading index, not three clone cards. */
+.reading-index{margin-top:42px;border-top:1px solid var(--border)}
+.reading-row{display:grid;grid-template-columns:minmax(175px,.65fr) minmax(0,1.15fr) minmax(225px,1fr);gap:36px;border-bottom:1px solid var(--border);padding:33px 6px 36px 0;align-items:start}
+.reading-meta span{display:block;font-weight:650;font-size:14px;line-height:1.5}
+.reading-meta small{display:block;font-size:12px;line-height:1.6;margin-top:8px;opacity:.73}
+.reading-row h3{font:400 clamp(29px,3vw,47px)/.99 var(--display);letter-spacing:-.035em;margin:0;max-width:15ch}
+.reading-note{display:flex;flex-direction:column;gap:20px}
+.reading-note p{font-size:14px;line-height:1.7;margin:0}
+.reading-note a{font-size:12px;font-weight:650;border-bottom:1px solid currentColor;width:max-content;display:inline-flex;align-items:center;gap:8px;padding-bottom:5px}
+/* Emphasis: content over metadata. */
+.topic-section-head h2{font-size:clamp(40px,4.65vw,66px);line-height:1.01;max-width:14ch}
+.topic-section-head p{margin-top:26px}
+.page-title{font-size:clamp(67px,7.2vw,112px)}
+.page-side{justify-content:space-around}
+.page-side .side-context{font:600 11px var(--body);border-bottom:1px solid var(--border);padding-bottom:13px;letter-spacing:.025em}
+.page-side .side-label{font:500 15px var(--body);line-height:1.3}
+.page-side .side-label strong{font:400 75px/.85 var(--display);letter-spacing:-.04em;display:block;margin-bottom:10px}
+.page-intro .micro{letter-spacing:.075em}
+.quote-kicker{font:500 12px var(--body);letter-spacing:.02em;opacity:.76}
+.quote-bottom .subline{max-width:49ch}
+.chapter-nav a{transition:opacity .19s var(--ease)}
+/* Feedback with clear boundaries, no needless movement. */
+.scenario-option,.lab-select,.mini-button,.outline-link,.footer-links button,.footer-links a{transition:opacity .19s var(--ease),transform .19s var(--ease)}
+.module-card:focus-visible,.entry-row:focus-visible,.reading-note a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
+@media(max-width:1120px){.home-title{font-size:clamp(68px,8.1vw,109px)}.home-intro{flex-direction:column;align-items:flex-start}.reading-row{gap:24px;grid-template-columns:.65fr 1fr 1fr}}
+@media(max-width:800px){
+  .home-hero{min-height:unset}
+  .home-left{min-height:520px;padding:65px 0 45px;gap:28px}
+  .home-title{font-size:clamp(65px,11vw,93px);max-width:12ch}
+  .home-right{min-height:430px}
+  .hero-emblem{min-height:260px}
+  .hero-logo{width:min(55%,290px)}
+  .entry-intro{grid-template-columns:1fr;gap:16px;padding-top:54px}
+  .entry-table{margin-bottom:0}
+  .entry-row{grid-template-columns:36px minmax(0,1fr) 25px;gap:16px}
+  .entry-answer{grid-column:2;grid-row:2}
+  .entry-arrow{grid-column:3;grid-row:1/3;align-self:center}
+  .reading-row{grid-template-columns:1fr 1.35fr;gap:18px}
+  .reading-note{grid-column:2}
+  .page-side .side-label strong{font-size:63px}
+}
+@media(max-width:540px){
+  .top-strip{justify-content:center;font-size:9px}
+  .home-left{min-height:470px;padding:48px 0 45px;gap:25px}
+  .home-title{font-size:clamp(64px,13.2vw,78px);letter-spacing:-.055em;margin:0}
+  .home-intro p{font-size:14px}
+  .home-right{min-height:365px;padding:22px}
+  .hero-logo{width:min(72%,255px)}
+  .hero-emblem{min-height:230px}
+  .hero-emblem-caption{font-size:10px;bottom:0}
+  .home-right-bottom{grid-template-columns:1fr;gap:12px}
+  .home-right-bottom strong{font-size:30px}
+  .hero-side-link{font-size:12px;width:max-content}
+  .entry-intro{padding-top:54px}
+  .entry-intro h2{font-size:43px}
+  .entry-row{padding:20px 5px 20px 0}
+  .entry-question{font-size:26px}
+  .entry-answer small{font-size:12px}
+  .reading-row{grid-template-columns:1fr;gap:15px;padding:24px 0}
+  .reading-row h3{font-size:37px;max-width:none}
+  .reading-note{grid-column:1}
+  .page-side .side-label strong{font-size:54px}
+  .topic-section-head h2{font-size:46px}
+}
+/* The applications and bibliography read as an annotated index. */
+.practice-guidelines{border-top:1px solid var(--border);margin-top:35px}
+.guideline-row{display:grid;grid-template-columns:70px minmax(0,1fr) minmax(260px,1.1fr);gap:24px;align-items:start;border-bottom:1px solid var(--border);padding:27px 6px 29px 0}
+.guideline-index{font:400 13px var(--mono);opacity:.55}
+.guideline-row h3{font:400 39px/1 var(--display);letter-spacing:-.03em;margin:0}
+.guideline-row p{margin:5px 0 0;font-size:14px;line-height:1.72;max-width:54ch}
+.book-index{border-top:1px solid var(--border)}
+.book-row{display:grid;grid-template-columns:minmax(220px,1.1fr) minmax(220px,1fr) minmax(150px,.72fr);gap:40px;border-bottom:1px solid var(--border);padding:35px 0}
+.book-record h3{font:400 clamp(32px,3vw,47px)/1 var(--display);letter-spacing:-.04em;margin:12px 0 16px}
+.book-record .book-author{font-size:12px;font-weight:600;margin:0}
+.book-description{font-size:14px;line-height:1.7;margin:0;max-width:47ch}
+.book-row .book-links{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.book-row .book-links a{font-size:12px;font-weight:600;border-bottom:1px solid var(--border);padding-bottom:5px}
+@media(max-width:800px){.book-row{grid-template-columns:1fr 1fr;gap:23px}.book-row .book-links{grid-column:2}.guideline-row{grid-template-columns:40px 1fr;gap:18px}.guideline-row p{grid-column:2}}
+@media(max-width:540px){.book-row{grid-template-columns:1fr;gap:16px}.book-row .book-links{grid-column:1}.guideline-row h3{font-size:35px}}
+.skip-link{position:fixed;top:10px;left:10px;background:var(--ink);color:var(--paper);padding:11px 16px;z-index:1000;transform:translateY(-140%);transition:transform .16s var(--ease)}
+.skip-link:focus{transform:translateY(0)}
+
+
+:root{--koor-header-h:88px}
+body{font-family:var(--body)}
+.micro,.kicker,.quote-kicker,.header-edition,.section-eyebrow,.brand-caption,.footer-head,.stat-label,.entry-n,.plan-day,.cycle-index,.f-number,.topic-meter small{font-family:Arial,Helvetica,sans-serif;letter-spacing:.02em;text-transform:none}
+.serif{letter-spacing:-.035em}
+.top-strip{display:none!important}
+.site-header{backdrop-filter:blur(10px);background:rgba(250,246,241,.92)}
+.header-main{height:88px;grid-template-columns:auto 1fr auto;gap:28px}
+.brand-word{font-size:32px;letter-spacing:-.08em}
+.brand-caption{font-size:11px;opacity:.62;margin-top:3px}
+.main-nav{justify-self:center;gap:6px}
+.nav-btn{font-size:14px;padding:0 14px;height:88px;font-weight:700}
+.nav-btn:after{left:14px;right:14px;height:3px;border-radius:999px;bottom:14px}
+.header-right{gap:0}
+.header-tool{border:1px solid var(--border);background:rgba(255,255,255,.45)}
+.scroll-progress{height:3px;background:linear-gradient(90deg,var(--accent),#b58b6f);bottom:0}
+.home-hero{grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);min-height:auto;align-items:stretch;padding-top:28px}
+.home-left{padding:56px 4.5vw 56px 0;gap:28px;justify-content:center}
+.hero-overline{font-size:14px;line-height:1.6;color:var(--accent)}
+.home-title{font-size:clamp(58px,7vw,108px);max-width:11ch;margin:0}.home-title .last{margin-left:0}
+.home-intro{flex-direction:column;align-items:flex-start;gap:22px;padding-top:0}.home-intro p{max-width:50ch;font-size:16px}
+.visual-panel{background:#f2ece4;border-left:1px solid var(--border);padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.hero-photo,.page-visual img,.module-thumb img,.visual-band-grid img{width:100%;height:100%;object-fit:cover}
+.hero-photo{min-height:460px;border-radius:0}
+.visual-panel-caption{display:flex;flex-direction:column;gap:6px;padding:6px 2px 0}.visual-panel-caption strong{font-size:28px;line-height:1.05;font-family:var(--display);font-weight:400;letter-spacing:-.03em}.visual-panel-caption span{font-size:14px;line-height:1.65;opacity:.78;max-width:32ch}
+.home-stats{grid-template-columns:repeat(4,1fr)}
+.stat{min-height:92px;padding-top:18px;padding-bottom:18px}.stat-number{font-size:50px}.stat-label{font-size:12px;line-height:1.5;max-width:150px}
+.module-grid-v3{grid-template-columns:repeat(2,1fr);grid-template-rows:none}.module-grid-v3 .module-card{min-height:420px;padding:0;background:var(--paper)}.module-grid-v3 .module-card.featured{grid-row:auto;background:var(--sand)}
+.module-thumb{height:186px;border-bottom:1px solid var(--border);overflow:hidden}.module-thumb img{transition:transform .55s var(--ease)}.module-card:hover .module-thumb img{transform:scale(1.03)}
+.module-card-header{padding:18px 22px 0}.module-card .card-title{padding:0 22px;margin-top:12px;font-size:clamp(34px,3.2vw,48px)}.module-card.featured .card-title{font-size:clamp(40px,4vw,60px)}
+.module-card .card-summary{padding:0 22px 0;max-width:44ch;font-size:15px;line-height:1.7}.mini-progress{font-size:12px;border:1px solid var(--border);padding:6px 9px;background:rgba(255,255,255,.6)}.module-card .card-foot{padding:0 22px 22px;font-size:13px}
+.visual-band{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start;padding:0 0 96px}.visual-band-copy{padding-right:14px}.visual-band-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.visual-band-grid figure{margin:0;display:flex;flex-direction:column;gap:10px}.visual-band-grid img{aspect-ratio:4/3;border:1px solid var(--border)}.visual-band-grid figcaption{font-size:13px;opacity:.72}
+.page-intro-v3{grid-template-columns:1fr minmax(300px,420px);align-items:start;gap:42px}.page-intro-v3 .page-title{font-size:clamp(58px,6.3vw,102px);max-width:11ch}.page-visual{background:#f2ece4;border:1px solid var(--border);padding:16px;display:flex;flex-direction:column;gap:12px}.page-visual img{aspect-ratio:4/3}.page-visual p{font-size:14px;line-height:1.65;margin:0}.page-visual-compact img{aspect-ratio:5/4}
+.topic-meter{margin-top:22px;display:flex;flex-direction:column;gap:8px;max-width:260px}.topic-meter-bar{height:6px;background:rgba(46,26,16,.12);overflow:hidden}.topic-meter-bar span{display:block;height:100%;background:var(--accent);transform-origin:left}
+.chapter-nav{top:var(--koor-header-h);background:rgba(250,246,241,.94)}.chapter-nav-inner{justify-content:flex-start;padding-right:0}.chapter-nav .micro{display:none}
+.cycle-index{font-size:12px}
+.footer-grid{grid-template-columns:1.3fr .9fr .9fr}.footer-mark{font-family:Arial,Helvetica,sans-serif;font-size:38px}.footer-bottom{justify-content:flex-start;gap:28px;flex-wrap:wrap}
+.reference-mini .micro{font-size:12px}
+.plan-aside .big-percent{font-size:72px}
+@media(max-width:1120px){.module-grid-v3{grid-template-columns:1fr 1fr}.home-hero{grid-template-columns:1fr}.visual-panel{border-left:0;border-top:1px solid var(--border)}.home-left{padding-right:0}}
+@media(max-width:800px){html{scroll-padding-top:120px}.header-main{height:auto;padding:14px 0 10px;display:flex;flex-wrap:wrap;justify-content:space-between}.main-nav{order:3;width:100%;justify-content:space-between;border-top:1px solid var(--line);padding-top:6px}.nav-btn{height:52px;padding:0 8px;font-size:13px}.home-stats{grid-template-columns:1fr 1fr}.module-grid-v3{grid-template-columns:1fr}.visual-band{grid-template-columns:1fr}.visual-band-grid{grid-template-columns:1fr}.page-intro-v3{grid-template-columns:1fr}.page-visual{order:-1}.home-title,.page-intro-v3 .page-title{max-width:none}.chapter-tabs{overflow:auto;white-space:nowrap;padding-bottom:2px}}
+@media(max-width:540px){.brand-word{font-size:30px}.hero-photo{min-height:320px}.home-stats{grid-template-columns:1fr}.module-thumb{height:170px}.footer-grid{grid-template-columns:1fr}.footer-bottom{gap:10px}}
+
+</style>
+</head>
+<body>
+ <svg class="visually-hidden" aria-hidden="true" width="0" height="0" focusable="false"><defs><mask id="koor-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="400"><rect width="400" height="400" fill="#fff"/><g stroke="#000" stroke-width="30" fill="none"><path d="M162 134V266"/><path d="M162 200L300 90"/><path d="M162 200L250 270"/></g></mask><symbol id="koor-symbol" viewBox="96 96 208 208"><circle cx="200" cy="200" r="104" fill="currentColor" mask="url(#koor-cut)"/></symbol></defs></svg>
+ <a class="skip-link" href="#app">Ir para o conteúdo</a>
+ <div id="site-header"></div>
+ <main id="app" tabindex="-1"></main>
+ <div id="site-footer"></div>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <script>
+/* Koor — conteúdo editorial e referências; textos originais elaborados para o hub. */
+window.KOOR_DATA = {
+  topics: [
+    {
+      id:'pessoas',num:'01',short:'Pessoas & autonomia',title:'Desenvolver pessoas sem concentrar decisões.',eyebrow:'GESTÃO DE PESSOAS',
+      lead:'Uma liderança sólida transforma responsabilidade em capacidade distribuída: direção clara, espaço para decidir e retorno frequente.',
+      challenge:'Quando toda escolha depende do líder, o time pode até entregar hoje — mas não aprende a sustentar o amanhã.',
+      signal:'O time toma decisões compatíveis com seu domínio e sabe quando pedir apoio.',
+      question:'Qual decisão permanece com você apenas porque ainda não criou condições para delegá-la?',
+      foundations:[
+        {name:'Autonomia se aprende no diálogo',author:'Paulo Freire',work:'Pedagogia da autonomia · 1996',text:'A prática educativa não se reduz à transmissão de respostas. Na liderança, a analogia é criar condições para que cada pessoa explique escolhas, analise consequências e desenvolva julgamento.',apply:'Pergunte “qual alternativa você recomenda e por quê?” antes de oferecer a solução.'},
+        {name:'Motivação depende do contexto',author:'Ryan & Deci',work:'Self-determination theory · 2000',text:'Autonomia, competência e vínculo são necessidades relevantes para a motivação autodeterminada. Incentivos e pressão não substituem um ambiente em que a equipe tem espaço e capacidade para agir.',apply:'Defina o resultado esperado, mas permita escolhas reais sobre o caminho.'},
+        {name:'Aprender exige segurança para falar',author:'Amy Edmondson',work:'Psychological safety · 1999',text:'Times aprendem melhor quando discordar, perguntar e reconhecer erros não é tratado como ameaça interpessoal. Isso não elimina padrões de qualidade ou responsabilidade.',apply:'Após uma falha, discuta o processo e as evidências antes de procurar culpados.'},
+        {name:'Desenvolvimento exige contribuição',author:'Peter Drucker',work:'The Effective Executive · 1967',text:'A eficácia gerencial depende de priorização, contribuição e uso consciente do tempo. Autonomia sem objetivos claros pode se tornar dispersão.',apply:'Delegue entregas com propósito, critério de qualidade e data de revisão.'},
+        {name:'O estilo depende da situação',author:'Daniel Goleman',work:'Leadership That Gets Results · 2000',text:'Líderes precisam variar comportamentos conforme necessidade e contexto. Orientar de perto um iniciante não significa retirar permanentemente sua autonomia.',apply:'Ajuste a frequência do acompanhamento à complexidade e ao domínio observável.'}
+      ],
+      cycle:{name:'Ciclo C-R-I-A',subtitle:'Método editorial Koor — síntese aplicada, não modelo formal dos autores.',steps:[
+        ['Compreender','Escute interesses, experiência, bloqueios e condições de trabalho.'],['Referenciar','Defina entrega, autonomia, limites e critério de conclusão.'],['Investir','Ofereça recurso, tempo, orientação e oportunidade de decisão.'],['Avaliar','Reveja resultado, aprendizados e próximo grau de responsabilidade.']]},
+      traps:[['Autonomia ≠ abandono','Delegar sem suporte não desenvolve; apenas transfere risco.'],['Confiança ≠ ausência de cobrança','Acompanhar compromissos pode fortalecer a confiança quando critérios são previsíveis.'],['Desenvolver ≠ apenas treinar','Conhecimento só se converte em capacidade quando é aplicado em responsabilidade real.']],
+      scenario:{title:'Uma entrega depende sempre de sua aprovação',context:'Uma pessoa experiente pede validação para escolhas simples, atrasando o time.',choices:[
+        ['Continue validando tudo para não correr riscos.','A centralização reduz autonomia e cria um gargalo recorrente.'],
+        ['Diga que agora ela deve resolver tudo sozinha.','A falta de fronteiras aumenta incerteza e pode elevar erros evitáveis.'],
+        ['Estabeleça decisões autônomas, critérios de escalonamento e revisão semanal.','Equilibra espaço de decisão, clareza e apoio; acompanhe se a regra funciona.'] ],best:2},
+      plan:[['Dia 1','Mapear uma dependência','Identifique uma decisão que poderia ser descentralizada.'],['Dia 2','Acordar fronteiras','Descreva resultado, restrições e quando escalar.'],['Dia 4','Acompanhar sem tomar o volante','Faça perguntas sobre critérios e evidências.'],['Dia 7','Ampliar ou ajustar','Revise erros, qualidade e próximo passo de autonomia.']],
+      metrics:[['Decisões com autonomia','Decisões tomadas no nível combinado, sem retrabalho relevante.','Não premiar decisões precipitadas.'],['Clareza de entregas','Percentual de atividades com responsável, prazo e qualidade definidos.','Medir clareza, não apenas quantidade.'],['Aprendizado aplicado','Exemplos de novas responsabilidades assumidas com sucesso.','Não confundir treinamento concluído com competência.']],
+      refs:['freire','ryan-deci','edmondson','drucker','goleman','pipeline']
+    },
+    {
+      id:'comunicacao',num:'02',short:'Comunicação & feedback',title:'Clareza é uma forma de respeito.',eyebrow:'COMUNICAÇÃO E FEEDBACK',
+      lead:'Conversas produtivas combinam escuta genuína, fatos verificáveis, expectativas explícitas e compromisso com a próxima ação.',
+      challenge:'A maior parte dos ruídos não nasce da falta de palavras, mas de expectativas que nunca foram realmente compartilhadas.',
+      signal:'Ao fim da conversa, as pessoas conseguem repetir o acordo com o mesmo significado.',
+      question:'Que conversa você está adiando, e qual fato objetivo tornaria sua abordagem mais justa?',
+      foundations:[
+        {name:'Pergunte antes de interpretar',author:'Edgar H. Schein',work:'Humble Inquiry · 2013',text:'A investigação humilde valoriza perguntas sinceras, especialmente quando há assimetria de autoridade. A intenção é compreender antes de propor respostas.',apply:'Comece com “o que tornou esta entrega difícil?” e escute sem interromper.'},
+        {name:'Separe fato, sentimento e pedido',author:'Marshall Rosenberg',work:'Nonviolent Communication',text:'A comunicação não violenta diferencia observações de interpretações e propõe explicitar necessidades e pedidos. Não é evitar assuntos difíceis.',apply:'Troque “você é descomprometido” por “o prazo de terça passou sem atualização”.'},
+        {name:'Combine cuidado com franqueza',author:'Kim Scott',work:'Leader to Leader · 2017',text:'Dar atenção à pessoa e desafiar diretamente comportamentos ou resultados são dimensões complementares de feedback, não polos incompatíveis.',apply:'Nomeie o problema sem diminuir quem está envolvido.'},
+        {name:'Receber feedback também é uma habilidade',author:'Stone & Heen',work:'Thanks for the Feedback · 2014',text:'O valor de um retorno depende de como ele é interpretado e trabalhado. O líder deve verificar sua própria defensividade e pedir exemplos concretos.',apply:'Pergunte “o que eu deveria fazer diferente na próxima semana?”.'}
+      ],
+      cycle:{name:'Ciclo C-O-A-C',subtitle:'Síntese operacional Koor a partir dos fundamentos do material original.',steps:[['Contextualizar','Cite os fatos e os acordos anteriores, sem supor intenções.'],['Ouvir','Convide a outra pessoa a descrever o contexto e os obstáculos.'],['Alinhar','Combine resultado, restrições, prazo e padrão de qualidade.'],['Concluir','Confirme o entendimento e registre o ponto de revisão.']]},
+      traps:[['Clareza ≠ dureza','Tom agressivo pode obscurecer a mensagem e desestimular perguntas.'],['Feedback ≠ correção de erro','Reconhecimento específico mostra quais comportamentos repetir.'],['Escutar ≠ concordar','Você pode compreender uma justificativa e manter um compromisso necessário.']],
+      scenario:{title:'Dois prazos foram perdidos',context:'Uma pessoa não entregou uma atividade em duas ocasiões. A equipe começa a especular sobre a causa.',choices:[['Cobrar publicamente para servir de exemplo.','Pode expor sem compreender as causas e prejudicar a confiança.'],['Evitar o tema para não criar desconforto.','Mantém o problema e transfere incerteza para o resto do time.'],['Conversar em particular com fatos, ouvir obstáculos e fechar um novo acordo.','Preserva a dignidade e produz um compromisso verificável.']],best:2},
+      plan:[['Dia 1','Mapear um ruído','Escolha um alinhamento recorrente que não foi nomeado.'],['Dia 2','Conversar com fatos','Use fatos, perguntas e expectativas explícitas.'],['Dia 4','Confirmar entendimento','Peça que a pessoa descreva o próximo passo.'],['Dia 7','Revisar o acordo','Cheque avanços e ajuste as condições necessárias.']],
+      metrics:[['Combinados explícitos','Reuniões com responsável, prazo e conclusão definidos.','Não transformar toda conversa em burocracia.'],['Correção de ruídos','Dúvidas essenciais resolvidas antes de executar.','Perguntar é sinal de prudência, não fraqueza.'],['Fechamento de feedbacks','Acordos revisados no momento prometido.','Evitar métrica vazia de quantidade de feedbacks.']],
+      refs:['schein','rosenberg','kim','stone-heen','hunter']
+    },
+    {
+      id:'decisoes',num:'03',short:'Decisão & pensamento',title:'Decidir com rigor, mesmo sem certeza.',eyebrow:'DECISÃO E PENSAMENTO CRÍTICO',
+      lead:'Uma decisão boa não é aquela que sempre dá certo; é aquela cujo processo torna hipóteses, riscos e critérios discutíveis.',
+      challenge:'Pressa, confiança excessiva e informações incompletas costumam parecer convicção — até a realidade contrariá-las.',
+      signal:'Critérios são registrados antes da decisão e as hipóteses podem ser revisadas.',
+      question:'Em que decisão recente uma hipótese foi tratada como fato?',
+      foundations:[
+        {name:'Reconheça a racionalidade limitada',author:'Herbert A. Simon',work:'Administrative Behavior · 1947',text:'As pessoas decidem com tempo e informações limitadas. O objetivo não é esperar onisciência, mas tornar explícitas as restrições do processo.',apply:'Declare a informação que falta e estabeleça quando a decisão precisa ocorrer.'},
+        {name:'Identifique atalhos cognitivos',author:'Tversky & Kahneman',work:'Science · 1974',text:'Heurísticas ajudam a julgar rapidamente, mas podem introduzir vieses sistemáticos. A impressão inicial não substitui a checagem de evidências.',apply:'Peça uma interpretação alternativa antes da aprovação final.'},
+        {name:'Imagine o fracasso antes de agir',author:'Gary Klein',work:'Performing a Project Premortem · 2007',text:'No pré-mortem, o grupo supõe que a iniciativa falhou e levanta razões possíveis. A técnica pode revelar riscos ignorados.',apply:'Pergunte “se isso falhar em um mês, qual terá sido a causa?”.'},
+        {name:'Atualize crenças com novas evidências',author:'Tetlock & Gardner',work:'Superforecasting · 2015',text:'Previsões e julgamentos podem melhorar com decomposição, probabilidades e revisão. O líder não precisa defender eternamente a primeira resposta.',apply:'Anote o que faria você mudar de ideia.'}
+      ],
+      cycle:{name:'Ciclo D-E-C-I',subtitle:'Procedimento prático Koor; não se trata de uma escala acadêmica validada.',steps:[['Definir','Delimite a decisão, os envolvidos e o prazo.'],['Evidenciar','Liste dados, hipóteses e lacunas separadamente.'],['Comparar','Avalie opções por critérios e riscos.'],['Inspecionar','Registre razões e uma data de revisão.']]},
+      traps:[['Confiança ≠ competência','Pessoas seguras podem estar mal informadas; evidências importam.'],['Resultado ≠ processo','Uma escolha mal fundamentada pode dar certo por sorte.'],['Rigor ≠ lentidão','Decisões reversíveis pedem menos burocracia que compromissos de alto custo.']],
+      scenario:{title:'Um fornecedor precisa ser escolhido hoje',context:'Há três propostas, orçamento limitado e evidências incompletas sobre o prazo de entrega.',choices:[['Escolher o menor preço sem comparar riscos.','Economiza tempo inicial, mas pode ignorar falhas críticas de execução.'],['Adiar indefinidamente até ter certeza completa.','A busca por certeza pode destruir a oportunidade.'],['Comparar critérios essenciais, registrar suposições e definir uma revisão.','Permite agir com limites explícitos e corrigir se surgirem dados novos.']],best:2},
+      plan:[['Dia 1','Selecionar uma decisão','Escolha uma decisão real e relevante.'],['Dia 2','Definir critérios','Escreva os fatores que realmente importam.'],['Dia 4','Fazer um pré-mortem','Antecipe três motivos plausíveis de falha.'],['Dia 7','Registrar revisão','Agende uma verificação de resultados e premissas.']],
+      metrics:[['Decisões documentadas','Escolhas relevantes com opções, critérios e responsáveis.','Evitar registros para decisões triviais.'],['Hipóteses testadas','Premissas críticas revistas antes ou após agir.','Não confundir quantidade de testes com qualidade.'],['Reversões fundamentadas','Mudanças realizadas com nova evidência documentada.','Mudar de ideia não deve ser automaticamente punido.']],
+      refs:['simon','tversky-kahneman','klein','tetlock','sinek']
+    },
+    {
+      id:'conflitos',num:'04',short:'Conflitos & negociação',title:'A discordância pode produzir acordos melhores.',eyebrow:'CONFLITOS E NEGOCIAÇÃO',
+      lead:'Conflito produtivo não é ausência de tensão: é capacidade de distinguir pessoas, interesses, responsabilidades e critérios de decisão.',
+      challenge:'Quando o problema passa a ser “quem venceu”, a equipe costuma perder acesso ao que realmente precisa resolver.',
+      signal:'Os envolvidos conseguem expressar interesses e concordar com critérios verificáveis.',
+      question:'Qual disputa em sua equipe está centrada em posições, sem considerar os interesses por trás delas?',
+      foundations:[
+        {name:'Procure integração de interesses',author:'Mary Parker Follett',work:'Conferências sobre conflito · 1926',text:'Follett enfatiza alternativas que integrem necessidades, em vez de reduzir tudo a domínio de um lado ou compromisso superficial.',apply:'Investigue se existe uma terceira opção que preserve o essencial para ambos.'},
+        {name:'Negocie interesses, não apenas posições',author:'Fisher, Ury & Patton',work:'Getting to Yes',text:'A negociação baseada em princípios separa o relacionamento do problema, explora interesses e usa critérios objetivos sempre que possível.',apply:'Pergunte “por que essa condição é importante para você?”.'},
+        {name:'Escolha um modo de lidar com o conflito',author:'Thomas & Kilmann',work:'Conflict Mode Instrument',text:'Competir, colaborar, comprometer, evitar e acomodar representam estilos possíveis em circunstâncias distintas; nenhum é universalmente correto.',apply:'Avalie urgência, importância do vínculo e margem de negociação.'},
+        {name:'Uma conversa difícil tem camadas',author:'Stone, Patton & Heen',work:'Difficult Conversations',text:'Disputas incluem percepções sobre fatos, sentimentos e identidade. Ignorar uma dessas dimensões pode impedir a resolução.',apply:'Nomeie o problema da entrega sem transformar o debate em julgamento de caráter.'}
+      ],
+      cycle:{name:'Ciclo P-O-N-T',subtitle:'Organização de conversa elaborada pela Koor para fins didáticos.',steps:[['Problema','Descreva a tensão observável, sem acusação pessoal.'],['Ouvir','Explore o que cada lado precisa e teme perder.'],['Negociar','Construa alternativas e compare critérios.'],['Termos','Registre responsáveis, limites e momento de revisão.']]},
+      traps:[['Conflito ≠ fracasso','Divergências sobre ideias podem revelar riscos e opções úteis.'],['Harmonia ≠ justiça','Evitar discussões necessárias mantém problemas estruturais.'],['Violação ≠ opinião divergente','Assédio e condutas inadequadas exigem proteção e encaminhamento próprio.']],
+      scenario:{title:'Dois núcleos disputam uma correção',context:'Uma entrega incompleta envolve duas áreas, e cada uma afirma que a responsabilidade é da outra.',choices:[['Escolher um culpado antes de reconstruir o fluxo.','Pode reforçar resistência e deixar a causa do problema intocada.'],['Pedir que resolvam entre si sem critérios.','Pode prolongar a disputa e manter a entrega vulnerável.'],['Reconstruir acordos, identificar interesses e formalizar responsabilidade futura.','Traz o debate para fatos e reduz a ambiguidade recorrente.']],best:2},
+      plan:[['Dia 1','Mapear a tensão','Identifique um conflito recorrente e seus impactos.'],['Dia 2','Ouvir separadamente','Colete percepções e interesses sem prometer concordância.'],['Dia 4','Gerar alternativas','Teste opções contra critérios compartilhados.'],['Dia 7','Revisar o pacto','Verifique a execução do acordo e a qualidade do vínculo.']],
+      metrics:[['Conflitos recorrentes','Problemas semelhantes que reaparecem após acordos.','Não interpretar todo conflito como fracasso.'],['Clareza de responsabilidade','Interfaces de trabalho com responsável e critério de conclusão.','Evitar rigidez quando colaboração for necessária.'],['Acordos sustentados','Ações pactuadas e revisadas com os envolvidos.','Acordo só formal não prova resolução.']],
+      refs:['follett','fisher','thomas','difficult','hunter']
+    },
+    {
+      id:'etica',num:'05',short:'Ética & confiança',title:'Confiança nasce da coerência repetida.',eyebrow:'ÉTICA E CONFIANÇA',
+      lead:'Não basta declarar valores: regras, exemplos e decisões precisam ser consistentes, compreensíveis e revisáveis.',
+      challenge:'Quando critérios mudam conforme a pessoa, confiança deixa de ser cultura e vira privilégio.',
+      signal:'A equipe compreende critérios e sabe como contestar decisões sem receio de arbitrariedade.',
+      question:'Que regra você exige dos outros e ainda não observa em sua própria prática?',
+      foundations:[
+        {name:'Caráter se forma na prática',author:'Aristóteles',work:'Ética a Nicômaco · tradição clássica',text:'Na ética das virtudes, a vida moral envolve hábitos, discernimento e ação situada. Regras são necessárias, mas não substituem julgamento prudente.',apply:'Observe decisões repetidas, não apenas discursos inspiradores.'},
+        {name:'Confiança implica vulnerabilidade',author:'Mayer, Davis & Schoorman',work:'Academy of Management Review · 1995',text:'O modelo integra competência, benevolência e integridade como fatores associados à percepção de confiabilidade.',apply:'Pergunte se a equipe vê capacidade, intenção legítima e coerência nas decisões.'},
+        {name:'O líder define padrões pelo exemplo',author:'Kouzes & Posner',work:'The Leadership Challenge · 2023',text:'A credibilidade exige alinhamento entre valores expressos e comportamentos visíveis. O exemplo não substitui processos, mas dá legitimidade a eles.',apply:'Aplique ao próprio trabalho o padrão de compromisso que cobra do time.'},
+        {name:'Ética também é comportamento social',author:'Brown, Treviño & Harrison',work:'OBHDP · 2005',text:'A liderança ética envolve modelagem de condutas e comunicação de padrões, não apenas traços pessoais abstratos.',apply:'Torne explícitos os critérios de escolha, correção e reconhecimento.'}
+      ],
+      cycle:{name:'Ciclo V-A-L-O',subtitle:'Ferramenta Koor de reflexão ética; não substitui normas institucionais.',steps:[['Valores','Identifique o princípio e a regra aplicável.'],['Alternativas','Compare opções e partes afetadas.'],['Legibilidade','Explique critérios e reconheça limitações.'],['Observação','Verifique se a prática foi coerente e corrigível.']]},
+      traps:[['Lealdade ≠ favoritismo','Relações pessoais não justificam exceções ocultas.'],['Transparência ≠ exposição','Informar critérios não autoriza divulgar dados confidenciais.'],['Coerência ≠ teimosia','Corrigir um procedimento injusto é mais ético que insistir nele.']],
+      scenario:{title:'Uma oportunidade e um vínculo pessoal',context:'Uma pessoa próxima ao líder pede prioridade em uma seleção sem cumprir os critérios divulgados.',choices:[['Abrir exceção silenciosa por confiança pessoal.','Enfraquece o tratamento isonômico e a legitimidade do processo.'],['Negar sem explicar critérios ou vias de recurso.','Evita o privilégio, mas perde a oportunidade de reforçar a justiça procedimental.'],['Aplicar critérios iguais, explicar a decisão e oferecer caminhos regulares.','Preserva a previsibilidade e protege as pessoas envolvidas.']],best:2},
+      plan:[['Dia 1','Identificar uma regra','Escolha um critério relevante e ainda pouco claro.'],['Dia 2','Explicar a decisão','Documente propósito e aplicação da regra.'],['Dia 4','Testar a consistência','Verifique se o mesmo critério vale para todos.'],['Dia 7','Abrir revisão','Recolha dúvidas e corrija incoerências justificadas.']],
+      metrics:[['Critérios publicados','Decisões relevantes que usam regras acessíveis e prévias.','Publicar não garante compreensão.'],['Exceções justificadas','Desvios formalizados com razão e aprovação apropriada.','Não estimular abertura de dados privados.'],['Revisões de processo','Falhas corrigidas com comunicação proporcional.','Evitar confundir revisão ética com busca por culpados.']],
+      refs:['aristotle','mayer','kouzes','trevino','hunter']
+    }
+  ],
+  lenses:[
+    {id:'sinek',label:'PROPÓSITO',name:'Comece pelo porquê',author:'Simon Sinek',year:'2009',question:'Por que este esforço merece existir?',argument:'O Círculo Dourado parte do porquê, passa pelo como e chega ao quê. No trabalho de uma equipe, isso ajuda a conectar tarefas a uma intenção compreensível.',limits:'Propósito não substitui planejamento, qualidade nem critérios de entrega.',application:'Antes de delegar, explique o benefício esperado e para quem ele importa.',source:'sinek',userPdf:'https://cdn.bookey.app/files/pdf/book/pt/comece-pelo-porqu%C3%AA.pdf'},
+    {id:'hunter',label:'SERVIÇO',name:'O monge e o executivo',author:'James C. Hunter',year:'1998',question:'O que preciso remover para que a equipe consiga agir?',argument:'A narrativa de liderança servidora diferencia poder formal de autoridade construída em relações, responsabilidade e serviço.',limits:'Servir não significa permissividade, ausência de cobrança ou negligenciar resultados.',application:'Pergunte que suporte específico está faltando antes de apenas pressionar por mais esforço.',source:'hunter',userPdf:'https://cdn.bookey.app/files/pdf/book/pt/o-monge-e-o-executivo.pdf'},
+    {id:'pipeline',label:'TRANSIÇÃO',name:'Pipeline de liderança',author:'Ram Charan, Stephen Drotter & James Noel',year:'2000',question:'Que mudança de papel esta responsabilidade exige?',argument:'Cada passagem de liderança altera habilidades, uso do tempo e valores de trabalho. O que faz alguém destacar-se como executor não basta para liderar outras pessoas.',limits:'O modelo empresarial original não deve ser replicado mecanicamente em equipes pequenas.',application:'Observe quando um líder precisa parar de resolver tudo e passar a desenvolver outros responsáveis.',source:'pipeline',userPdf:'http://silvestreconsultoria.com.br/upload/downloads/14022022032951.pdf'}
+  ],
+  sources:[
+    {id:'freire',author:'Paulo Freire',title:'Pedagogia da autonomia',year:'1996',type:'Livro',url:'https://bds.unb.br/handle/123456789/622',topic:'pessoas'},
+    {id:'ryan-deci',author:'Richard M. Ryan & Edward L. Deci',title:'Self-determination theory and the facilitation of intrinsic motivation',year:'2000',type:'Artigo',url:'https://pubmed.ncbi.nlm.nih.gov/11392867/',topic:'pessoas'},
+    {id:'edmondson',author:'Amy Edmondson',title:'Psychological Safety and Learning Behavior in Work Teams',year:'1999',type:'Artigo',url:'https://dash.harvard.edu/entities/publication/13a7b031-0fdd-45ec-a7e0-2b80e2bc679f',topic:'pessoas'},
+    {id:'drucker',author:'Peter F. Drucker',title:'The Effective Executive',year:'1967',type:'Livro',url:'https://www.routledge.com/The-Effective-Executive/Drucker/p/book/9781138470101',topic:'pessoas'},
+    {id:'goleman',author:'Daniel Goleman',title:'Leadership That Gets Results',year:'2000',type:'Artigo',url:'https://hbr.org/2000/03/leadership-that-gets-results',topic:'pessoas'},
+    {id:'schein',author:'Edgar H. Schein',title:'Humble Inquiry',year:'2013',type:'Livro',url:'https://www.oreilly.com/library/view/humble-inquiry/9781609949815/',topic:'comunicacao'},
+    {id:'rosenberg',author:'Marshall B. Rosenberg',title:'Nonviolent Communication: A Language of Life',year:'',type:'Livro',url:'https://nonviolentcommunication.com/product/nvc/',topic:'comunicacao'},
+    {id:'kim',author:'Kim Scott',title:'Understand What Motivates Each Person on Your Team',year:'2017',type:'Artigo',url:'https://onlinelibrary.wiley.com/doi/full/10.1002/ltl.20319',topic:'comunicacao'},
+    {id:'stone-heen',author:'Douglas Stone & Sheila Heen',title:'Thanks for the Feedback',year:'2014',type:'Livro',url:'https://www.penguinrandomhouse.com/books/313485/thanks-for-the-feedback-by-douglas-stone-and-sheila-heen/',topic:'comunicacao'},
+    {id:'simon',author:'Herbert A. Simon',title:'Administrative Behavior',year:'1947',type:'Livro',url:'https://books.google.com/books/about/Administrative_Behavior.html?id=HISz4n8xfkIC',topic:'decisoes'},
+    {id:'tversky-kahneman',author:'Amos Tversky & Daniel Kahneman',title:'Judgment under Uncertainty: Heuristics and Biases',year:'1974',type:'Artigo',url:'https://pubmed.ncbi.nlm.nih.gov/17835457/',topic:'decisoes'},
+    {id:'klein',author:'Gary Klein',title:'Performing a Project Premortem',year:'2007',type:'Artigo',url:'https://hbr.org/2007/09/performing-a-project-premortem',topic:'decisoes'},
+    {id:'tetlock',author:'Philip E. Tetlock & Dan Gardner',title:'Superforecasting',year:'2015',type:'Livro',url:'https://www.penguinrandomhouse.com/books/227815/superforecasting-by-philip-e-tetlock-and-dan-gardner/',topic:'decisoes'},
+    {id:'follett',author:'Mary Parker Follett',title:'Conferências sobre administração e conflito',year:'1926',type:'Acervo',url:'https://rowntree.exeter.ac.uk/items/show/608',topic:'conflitos'},
+    {id:'fisher',author:'Roger Fisher, William Ury & Bruce Patton',title:'Getting to Yes',year:'',type:'Livro',url:'https://www.pon.harvard.edu/shop/getting-to-yes-negotiating-agreement-without-giving-in/',topic:'conflitos'},
+    {id:'thomas',author:'Kenneth Thomas & Ralph Kilmann',title:'Thomas–Kilmann Conflict Mode Instrument',year:'',type:'Modelo',url:'https://www.themyersbriggs.com/en-US/Products-and-Services/TKI',topic:'conflitos'},
+    {id:'difficult',author:'Douglas Stone, Bruce Patton & Sheila Heen',title:'Difficult Conversations',year:'2023',type:'Livro',url:'https://www.pon.harvard.edu/shop/difficult-conversations-how-to-discuss-what-matters-most/',topic:'conflitos'},
+    {id:'aristotle',author:'Aristóteles',title:'Aristotle’s Ethics',year:'',type:'Referência',url:'https://plato.stanford.edu/entries/aristotle-ethics/',topic:'etica'},
+    {id:'mayer',author:'Roger C. Mayer, James H. Davis & F. David Schoorman',title:'An Integrative Model of Organizational Trust',year:'1995',type:'Artigo',url:'https://doi.org/10.5465/AMR.1995.9508080335',topic:'etica'},
+    {id:'kouzes',author:'James M. Kouzes & Barry Z. Posner',title:'The Leadership Challenge',year:'2023',type:'Livro',url:'https://www.wiley.com/en-us/The+Leadership+Challenge%3A+How+to+Make+Extraordinary+Things+Happen+in+Organizations%2C+7th+Edition-p-9781119736127',topic:'etica'},
+    {id:'trevino',author:'Michael E. Brown, Linda K. Treviño & David A. Harrison',title:'Ethical Leadership: A Social Learning Perspective',year:'2005',type:'Artigo',url:'https://doi.org/10.1016/j.obhdp.2005.03.002',topic:'etica'},
+    {id:'sinek',author:'Simon Sinek',title:'Start with Why / Comece pelo porquê',year:'2009',type:'Livro',url:'https://simonsinek.com/books/start-with-why',topic:'lentes'},
+    {id:'hunter',author:'James C. Hunter',title:'The Servant / O monge e o executivo',year:'1998',type:'Livro',url:'https://www.penguinrandomhouse.com/books/84466/the-servant-by-james-c-hunter/',topic:'lentes'},
+    {id:'pipeline',author:'Ram Charan, Stephen Drotter & James Noel',title:'The Leadership Pipeline / Pipeline de liderança',year:'2000',type:'Livro',url:'https://ram-charan.com/books/the-leadership-pipeline/',topic:'lentes'}
+  ]
+};
+
+</script>
+ <script>
+/* Koor — apresentação, navegação e interatividade. JavaScript sem dependências. */
+(() => {
+  'use strict';
+  const data = window.KOOR_DATA;
+  const visuals={hero:'assets/hero-team.jpg',coaching:'assets/coaching.jpg',workshop:'assets/workshop.jpg'};
+  const visualAlt={hero:'Reunião de liderança colaborativa em uma sala iluminada.',coaching:'Conversa individual de coaching entre líder e liderado.',workshop:'Equipe em workshop de planejamento e priorização.'};
+  function topicVisual(id){return ({pessoas:visuals.coaching,comunicacao:visuals.coaching,decisoes:visuals.hero,conflitos:visuals.workshop,etica:visuals.hero})[id]||visuals.hero;}
+  function topicVisualAlt(id){return ({pessoas:'Conversa de desenvolvimento individual.',comunicacao:'Momento de escuta ativa e feedback.',decisoes:'Reunião de decisão com equipe.',conflitos:'Workshop coletivo para alinhar interesses.',etica:'Equipe debatendo critérios e responsabilidade.'})[id]||visualAlt.hero;}
+
+  const topics = data.topics;
+  const sourceMap = Object.fromEntries(data.sources.map(s => [s.id,s]));
+  const app = document.querySelector('#app');
+  const state = {labTool:'delegacao',query:'',filter:'todos',kind:'todos'};
+  const ESC = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const brand = (className='',inverted=false) => `<svg class="${className}" viewBox="96 96 208 208" role="img" aria-label="Símbolo Koor" style="color:${inverted?'var(--paper)':'var(--accent)'}"><use href="#koor-symbol" width="100%" height="100%"></use></svg>`;
+  const route = () => (decodeURIComponent(location.hash.slice(1)) || 'inicio').replace(/^\/+/, '');
+  const tLink = id => `#trilha/${id}`;
+  const topic = id => topics.find(t=>t.id===id);
+  const label = (text,cls='') => `<div class="kicker ${cls}">${ESC(text)}</div>`;
+  const arrow = `<span class="arrow" aria-hidden="true">↗</span>`;
+  let memoryProgress = {};
+  let memoryChoices = {};
+  function countCompleted(t){const ids=readProgress()[t.id]||[];return ids.filter(i=>Number.isInteger(i)&&i>=0&&i<t.plan.length).length;}
+  function readProgress(){try{return JSON.parse(localStorage.getItem('koor_progress_v1')||'{}')||{};}catch{return memoryProgress;}}
+  function saveProgress(obj){memoryProgress=obj;try{localStorage.setItem('koor_progress_v1',JSON.stringify(obj));}catch{/* Progresso da sessão permanece em memória. */}}
+  function readChoices(){try{return JSON.parse(localStorage.getItem('koor_choices_v1')||'{}')||{};}catch{return memoryChoices;}}
+  function saveChoices(obj){memoryChoices=obj;try{localStorage.setItem('koor_choices_v1',JSON.stringify(obj));}catch{}}
+  let toastTimeout;
+  function toast(message){const el=document.querySelector('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>el.classList.remove('show'),2600);}
+  function nav(){
+    const r=route();
+    const links=[['inicio','Início'],['trilhas','Trilhas'],['laboratorio','Laboratório'],['biblioteca','Biblioteca'],['metodo','Sobre']];
+    document.querySelector('#site-header').innerHTML=`<header class="site-header">
+      <div class="shell header-main">
+        <a class="brand" href="#inicio" aria-label="Koor, voltar ao início">${brand()}<span class="brand-type"><span class="brand-word">Koor</span><span class="brand-caption">gestão inteligente</span></span></a>
+        <nav class="main-nav" aria-label="Navegação principal">${links.map(([id,n])=>`<button class="nav-btn ${((r.startsWith('trilha')&&id==='trilhas')||r===id)?'is-active':''}" data-route="${id}" ${((r.startsWith('trilha')&&id==='trilhas')||r===id)?'aria-current="page"':''}>${n}</button>`).join('')}</nav>
+        <div class="header-right"><button class="header-tool" data-route="biblioteca" aria-label="Ir para a biblioteca" title="Biblioteca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></div>
+      </div><div class="scroll-progress" id="scroll-progress"></div>
+    </header>`;
+  }
+  function footer(){
+    document.querySelector('#site-footer').innerHTML=`<footer class="site-footer"><div class="shell">
+      <div class="footer-grid"><div><div class="footer-mark">${brand('',true)} Koor</div><p class="footer-description">Um hub para estudar liderança com menos ruído visual, mais clareza de uso e mais espaço para aplicar as ideias na equipe.</p></div>
+      <div><div class="footer-head">Explorar</div><div class="footer-links"><button data-route="trilhas">Ver trilhas</button><button data-route="laboratorio">Abrir laboratório</button><button data-route="biblioteca">Consultar referências</button><button data-route="metodo">Entender a Koor</button></div></div>
+      <div><div class="footer-head">Base conceitual</div><div class="footer-links"><a href="https://simonsinek.com/books/start-with-why" target="_blank" rel="noopener noreferrer">Simon Sinek</a><a href="https://www.penguinrandomhouse.com/books/84466/the-servant-by-james-c-hunter/" target="_blank" rel="noopener noreferrer">James C. Hunter</a><a href="https://ram-charan.com/books/the-leadership-pipeline/" target="_blank" rel="noopener noreferrer">Ram Charan e coautores</a></div></div></div>
+      <div class="footer-bottom"><span>© Koor — Gestão Inteligente</span><span>Conteúdo didático e sínteses autorais para estudo.</span></div>
+    </div></footer>`;
+  }
+  let revealObserver = null;
+  function motion(){
+    if(revealObserver){ revealObserver.disconnect(); revealObserver=null; }
+    const nodes=[...app.querySelectorAll('[data-reveal]')];
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduced || !('IntersectionObserver' in window)){
+      nodes.forEach(node=>node.classList.add('shown'));
+      return;
+    }
+    revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        entry.target.classList.add('shown');
+        revealObserver?.unobserve(entry.target);
+      });
+    },{threshold:0.01,rootMargin:'0px 0px 65px 0px'});
+    nodes.forEach(node=>{
+      if(node.getBoundingClientRect().top < window.innerHeight + 50){node.classList.add('shown');}
+      else {revealObserver.observe(node);}
+    });
+  }
+  function setTitle(title){document.title=`${title} | Koor — Gestão Inteligente`;}
+  function sectionHeading(index,headline,description=''){
+    const names={'01':'Para entender','02':'Para aplicar','03':'Onde é preciso cuidado','04':'Para exercitar o julgamento','05':'Para levar à equipe','06':'Para acompanhar','07':'Para continuar a leitura'};
+    const section=names[index]||'Leitura e prática';
+    return `<div class="topic-section-head" data-reveal><div><span class="section-eyebrow">${section}</span><h2 class="serif">${ESC(headline)}</h2></div><div>${description?`<p>${ESC(description)}</p>`:''}</div></div>`;
+  }
+  function home(){
+    setTitle('Um espaço para estudar liderança');
+    const choices=[
+      ['Minha equipe depende de mim para decidir.','Pessoas e autonomia','pessoas','Rever acordos de responsabilidade e o nível de suporte.'],
+      ['A conversa acontece, mas nada muda.','Comunicação e feedback','comunicacao','Transformar percepções em fatos, expectativas e compromissos.'],
+      ['Temos opções, mas não temos critérios.','Decisão e pensamento','decisoes','Distinguir evidências, hipóteses e riscos antes de escolher.'],
+      ['Duas áreas não conseguem chegar a um acordo.','Conflitos e negociação','conflitos','Separar interesses, responsabilidades e critérios de decisão.'],
+      ['As regras parecem mudar conforme a pessoa.','Ética e confiança','etica','Construir coerência entre critérios declarados e decisões tomadas.']
+    ];
+    return `<div class="shell"><section class="home-hero" aria-labelledby="home-title">
+      <div class="home-left">
+        <p class="hero-overline first-in" style="--delay:30ms">Hub de liderança para estudar, aplicar e revisar decisões.</p>
+        <h1 class="serif home-title first-in" id="home-title" style="--delay:95ms">Liderar bem é criar <em>clareza para que mais pessoas consigam agir.</em></h1>
+        <div class="home-intro first-in" style="--delay:170ms"><p>A Koor organiza conteúdos, casos e ferramentas de liderança em uma estrutura simples. Menos enfeite. Mais orientação prática para conversas, responsabilidades e escolhas difíceis.</p><a href="#trilhas" class="solid-link">Explorar as trilhas ${arrow}</a></div>
+      </div>
+      <div class="home-right visual-panel first-in" style="--delay:220ms"><img class="hero-photo" src="${visuals.hero}" alt="${visualAlt.hero}"><div class="visual-panel-caption"><strong>Coordenação com presença.</strong><span>Conteúdo visual, fundamentos e aplicação para quem lidera gente de verdade.</span></div></div>
+    </section>
+    <div class="home-stats"><div class="stat"><span class="stat-number">5</span><span class="stat-label">trilhas centrais para estudar liderança</span></div><div class="stat"><span class="stat-number">3</span><span class="stat-label">ferramentas aplicadas para reuniões e decisões</span></div><div class="stat"><span class="stat-number">24</span><span class="stat-label">referências reunidas na biblioteca</span></div><div class="stat"><span class="stat-number">1</span><span class="stat-label">hub integrado para leitura e prática</span></div></div>
+    <div class="entry-intro" data-reveal><div><span class="section-eyebrow">Por onde começar</span><h2>Escolha o problema que mais se parece com o seu contexto.</h2></div><p>Você não precisa percorrer tudo em sequência. A melhor entrada é a situação que sua equipe já está vivendo.</p></div>
+    <div class="entry-table">${choices.map(([q,name,id,detail],i)=>`<a class="entry-row" href="${tLink(id)}" data-reveal><span class="entry-n">${String(i+1).padStart(2,'0')}</span><div class="entry-question">${ESC(q)}</div><div class="entry-answer"><strong>${ESC(name)}</strong><small>${ESC(detail)}</small></div><span class="entry-arrow">${arrow}</span></a>`).join('')}</div>
+    </div>
+    <section class="block-section shell" id="trilhas"><div class="block-head" data-reveal><div>${label('Cinco trilhas')}<h2 class="serif section-title">Estude um tema por vez, sem perder o conjunto.</h2></div><p>Cada trilha reúne fundamentos, contrapontos, um caso, indicadores e um plano curto de aplicação.</p></div>
+      <div class="module-grid module-grid-v3">${topics.map((t,i)=>`<a href="${tLink(t.id)}" class="module-card ${i===0?'featured':''}" aria-label="Abrir tema: ${ESC(t.short)}"><div class="module-thumb"><img src="${topicVisual(t.id)}" alt="${topicVisualAlt(t.id)}"></div><div class="module-card-header"><span class="num">Trilha ${t.num}</span><span class="mini-progress">${Math.round(countCompleted(t)/t.plan.length*100)}%</span></div><div><h3 class="card-title">${ESC(t.short)}</h3><p class="card-summary">${ESC(t.lead)}</p></div><div class="card-foot"><span>${countCompleted(t)} de ${t.plan.length} ações registradas</span>${arrow}</div></a>`).join('')}</div>
+    </section>
+    <section class="visual-band shell" data-reveal><div class="visual-band-copy">${label('Cenas de liderança')}<h2 class="serif section-title">O trabalho de liderar também é relacional.</h2><p class="subline">Por isso o hub passou a incorporar imagens editoriais: elas aliviam a densidade do texto e aproximam o estudo de situações humanas reais.</p></div><div class="visual-band-grid"><figure><img src="${visuals.coaching}" alt="${visualAlt.coaching}"><figcaption>Conversa individual e escuta ativa.</figcaption></figure><figure><img src="${visuals.workshop}" alt="${visualAlt.workshop}"><figcaption>Coordenação coletiva e priorização.</figcaption></figure></div></section>
+    <section class="lens-section"><div class="shell"><div class="block-head" data-reveal><div>${label('Leituras em diálogo')}<h2 class="serif section-title">Três autores. <br><em>Perguntas diferentes.</em></h2></div><p>Sinek, Hunter e Charan ajudam a pensar propósito, relações e passagem de responsabilidade. A força do hub está em colocar essas vozes em conversa.</p></div>
+      <div class="reading-index">${data.lenses.map((l,i)=>`<article class="reading-row" data-reveal><div class="reading-meta"><span>${ESC(l.author)}</span><small>${l.year} · ${ESC(l.name)}</small></div><h3>${ESC(l.question)}</h3><div class="reading-note"><p>${ESC(l.argument)}</p><a href="#biblioteca">Ver referência ${arrow}</a></div></article>`).join('')}</div></div></section>
+    <section class="block-section shell"><div class="block-head" data-reveal><div>${label('Da ideia à conduta')}<h2 class="serif section-title">Gestão aparece na forma como você conduz o cotidiano.</h2></div><p>O contraste abaixo não classifica pessoas. Ele mostra como pequenas decisões gerenciais alteram a qualidade do trabalho coletivo.</p></div><div class="comparison-strip">${[['Liderar tudo sozinho','Concentrar a decisão, corrigir tarde e gerar dependência.'],['Organizar o trabalho em conjunto','Explicitar critérios, distribuir responsabilidade e revisar com método.']].map(([h,p],i)=>`<article class="compare-card" data-reveal><span class="micro">${i===0?'Risco frequente':'Condução desejável'}</span><h3>${h}</h3><p>${p}</p></article>`).join('')}</div></section>
+    <section class="home-quote"><div class="shell quote-grid" data-reveal><span class="quote-kicker">A prática começa aqui</span><div><blockquote>Menos respostas prontas.<br>Mais <em>critérios para agir.</em></blockquote><div class="quote-bottom"><p class="subline">Prepare uma delegação, uma conversa de feedback ou uma decisão relevante com ferramentas que você pode adaptar à sua equipe.</p><a class="outline-link" href="#laboratorio">Ir para as ferramentas ${arrow}</a></div></div></div></section>`;
+  }
+  function indexView(){return home();}
+  function topicView(t){
+    setTitle(t.short);
+    const r=readProgress()[t.id]||[];
+    const selected=readChoices()[t.id];
+    const idx=topics.indexOf(t);const prev=topics[(idx+topics.length-1)%topics.length],next=topics[(idx+1)%topics.length];
+    const sources=t.refs.map(id=>sourceMap[id]).filter(Boolean);
+    const topicPct=(idx+1)/topics.length;
+    return `<div class="shell"><section class="page-intro page-intro-grid page-intro-v3"><div><span class="section-eyebrow first-in" style="--delay:50ms">${ESC(t.eyebrow)}</span><h1 class="serif page-title first-in" style="--delay:100ms">${ESC(t.title)}</h1><p class="page-summary first-in" style="--delay:175ms">${ESC(t.lead)}</p><div class="topic-meter first-in" style="--delay:220ms"><div class="topic-meter-bar"><span style="transform:scaleX(${topicPct})"></span></div><small>Trilha ${t.num} de 5</small></div><div class="first-in" style="--delay:240ms;margin-top:27px"><a class="outline-link" href="#fundamentos" data-anchor="fundamentos">Ler fundamentos <span class="arrow">↓</span></a></div></div><aside class="page-visual first-in" style="--delay:180ms"><img src="${topicVisual(t.id)}" alt="${topicVisualAlt(t.id)}"><p>${ESC(t.challenge)}</p></aside></section></div>
+      <div class="chapter-nav"><div class="shell chapter-nav-inner"><nav class="chapter-tabs" aria-label="Seções da trilha"><a href="#fundamentos" data-anchor="fundamentos">Fundamentos</a><a href="#metodo-ciclo" data-anchor="metodo-ciclo">Método</a><a href="#contrapontos" data-anchor="contrapontos">Contrapontos</a><a href="#caso" data-anchor="caso">Caso</a><a href="#aplicacao" data-anchor="aplicacao">Aplicação</a><a href="#indicadores" data-anchor="indicadores">Indicadores</a></nav></div></div>
+      <section class="topic-section shell" id="fundamentos">${sectionHeading('01','Ideias para pensar e agir.','Os conceitos abaixo são interpretações didáticas das obras citadas. Eles servem como lentes de julgamento, não como fórmulas universais.')}
+        <div class="foundation-list">${t.foundations.map((f,i)=>`<article class="foundation-item" data-reveal><span class="f-number">${String(i+1).padStart(2,'0')}</span><div><h3 class="foundation-name">${ESC(f.name)}</h3><div class="foundation-author">${ESC(f.author)}<br>${ESC(f.work)}</div></div><div class="foundation-description-wrap"><p class="foundation-description">${ESC(f.text)}</p><div class="foundation-apply"><b>Na prática</b>${ESC(f.apply)}</div></div></article>`).join('')}</div>
+      </section>
+      <section class="topic-section shell" id="metodo-ciclo">${sectionHeading('02','Da leitura ao método.','Síntese própria da Koor para orientar uma ação concreta. As etapas não constituem diagnóstico, certificação nem instrumento validado.')}
+        <div class="cycle-header" data-reveal><span class="cycle-name">${ESC(t.cycle.name)}</span><p class="subline body-muted">${ESC(t.cycle.subtitle)}</p></div><div class="cycle-steps">${t.cycle.steps.map(([h,d],i)=>`<div class="cycle-step" data-reveal><span class="cycle-index">Etapa ${i+1}</span><h3>${ESC(h)}</h3><p>${ESC(d)}</p></div>`).join('')}</div>
+      </section>
+      <section class="topic-section shell" id="contrapontos">${sectionHeading('03','Quando uma boa ideia vira um erro.','Nenhum princípio funciona bem se aplicado sem contexto. Estes contrastes ajudam a reconhecer exageros comuns.')}
+      <div class="trap-list">${t.traps.map(([h,d],i)=>`<article class="trap-card" data-reveal><span class="micro">Cuidado de aplicação</span><h3>${ESC(h)}</h3><p>${ESC(d)}</p></article>`).join('')}</div></section>
+      <section class="topic-section shell" id="caso">${sectionHeading('04','O julgamento começa no caso.','Escolha uma abordagem e observe suas consequências prováveis. O exercício não é teste de perfil nem oferece respostas universais.')}
+      <div class="scenario" data-reveal><div class="scenario-intro"><span class="micro">Situação para analisar</span><div><h3>${ESC(t.scenario.title)}</h3><p>${ESC(t.scenario.context)}</p></div><span class="micro">Discuta as alternativas</span></div><div class="scenario-body"><span class="micro">Qual caminho você adotaria?</span><div class="scenario-options">${t.scenario.choices.map(([text],i)=>`<button class="scenario-option ${selected===i?'chosen':''}" data-scenario="${t.id}" data-choice="${i}" aria-pressed="${selected===i}"><span class="scenario-letter">${['A','B','C'][i]}.</span><span>${ESC(text)}</span></button>`).join('')}</div><div id="scenario-feedback-${t.id}" aria-live="polite">${selected!==undefined?feedbackMarkup(t,selected):''}</div></div></div>
+      </section>
+      <section class="topic-section shell" id="aplicacao">${sectionHeading('05','Uma semana para começar.','Uma sequência curta, deliberadamente pequena. Marque o que foi realmente feito e use o registro como memória de prática.')}
+        <div class="plan-layout"><div class="plan-list" data-reveal>${t.plan.map(([day,head,desc],i)=>`<label class="plan-item"><input type="checkbox" data-plan="${t.id}" data-step="${i}" ${r.includes(i)?'checked':''}><span class="plan-day">${ESC(day)}</span><span><b>${ESC(head)}</b><small>${ESC(desc)}</small></span></label>`).join('')}</div>
+        <aside class="plan-aside" data-reveal id="plan-aside-${t.id}">${renderPlanAside(t)}</aside></div>
+      </section>
+      <section class="topic-section shell" id="indicadores">${sectionHeading('06','O que observar.','Indicadores são pontos de atenção para revisar processos. Não devem ser usados isoladamente para classificar o valor de pessoas.')}
+        <div data-reveal><table class="data-table"><thead><tr><th>Indicador sugerido</th><th>Como observar</th><th>Cuidado de interpretação</th></tr></thead><tbody>${t.metrics.map(([a,b,c])=>`<tr><td>${ESC(a)}</td><td>${ESC(b)}</td><td>${ESC(c)}</td></tr>`).join('')}</tbody></table></div>
+      </section>
+      <section class="topic-section shell" id="fontes">${sectionHeading('07','As ideias têm origem.','As referências são registros bibliográficos, artigos ou páginas de editoras. Os textos deste hub são paráfrases e aplicações originais.')}
+       <div class="foundation-list">${sources.map((s,i)=>`<div class="reference-mini" data-reveal><div><span class="micro">${ESC(s.type.toUpperCase())}</span><div style="font:400 27px/1.2 var(--display);margin-top:9px">${ESC(s.title)}</div><small style="font-size:12px;opacity:.7">${ESC(s.author)} ${s.year?'· '+ESC(s.year):''}</small></div><a href="${ESC(s.url)}" target="_blank" rel="noopener noreferrer">Consultar fonte ${arrow}</a></div>`).join('')}</div>
+      </section>
+      <div class="topic-next"><button data-route="trilha/${prev.id}"><span class="micro">Tema anterior</span><span class="next-title">${ESC(prev.short)}</span></button><button data-route="trilha/${next.id}"><span class="micro">Próximo tema</span><span class="next-title">${ESC(next.short)}</span></button></div>`;
+  }
+  function feedbackMarkup(t,choice){const right=choice===t.scenario.best;return `<div class="scenario-feedback"><strong>${right?'Abordagem mais consistente neste cenário':'Ponto de atenção nesta abordagem'}</strong><p>${ESC(t.scenario.choices[choice][1])}</p></div>`;}
+  function renderPlanAside(t){let n=countCompleted(t);let pct=Math.round(n/t.plan.length*100);return `<span class="micro">PROGRESSO DE PRÁTICA</span><div class="big-percent">${pct}%</div><div class="progress-rail" role="progressbar" aria-label="Progresso da prática" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><div class="progress-fill" style="transform:scaleX(${pct/100})"></div></div><p>${n} de ${t.plan.length} ações realizadas. Progresso salvo neste navegador, sem conta e sem envio de dados.</p><div class="plan-buttons"><button class="mini-button" data-copy-plan="${t.id}">Copiar plano</button><button class="mini-button" data-reset-plan="${t.id}">Reiniciar</button></div>`;}
+  function tracksView(){
+    setTitle('Trilhas de liderança');
+    return `<div class="shell"><section class="page-intro page-intro-grid page-intro-v3"><div><span class="section-eyebrow first-in">Percurso de estudo</span><h1 class="serif page-title first-in" style="--delay:80ms">Cinco trilhas para ler, aplicar e revisar.</h1><p class="page-summary first-in" style="--delay:160ms">Os temas são independentes, mas se reforçam mutuamente. Você pode entrar por qualquer um deles.</p></div><aside class="page-visual page-visual-compact first-in"><img src="${visuals.workshop}" alt="${visualAlt.workshop}"><p>Progresso simples: cada trilha mostra quantas ações você já registrou neste navegador.</p></aside></section></div>
+    <section class="block-section shell"><div class="module-grid module-grid-v3">${topics.map((t,i)=>`<a href="${tLink(t.id)}" class="module-card ${i===0?'featured':''}"><div class="module-thumb"><img src="${topicVisual(t.id)}" alt="${topicVisualAlt(t.id)}"></div><div class="module-card-header"><span class="num">Trilha ${t.num}</span><span class="mini-progress">${countCompleted(t)}/${t.plan.length}</span></div><div><h2 class="card-title">${ESC(t.short)}</h2><p class="card-summary">${ESC(t.lead)}</p></div><div class="card-foot"><span>${countCompleted(t)} ações marcadas</span>${arrow}</div></a>`).join('')}</div></section>
+    <section class="home-quote"><div class="shell quote-grid"><span class="quote-kicker">Sugestão de percurso</span><div><blockquote>Comece pelas pessoas.<br>Construa <em>clareza.</em><br>Depois sustente decisões.</blockquote><div class="quote-bottom"><p class="subline">É uma sugestão editorial. Não é um caminho obrigatório.</p><a href="#trilha/pessoas" class="outline-link">Começar pela trilha de pessoas ${arrow}</a></div></div></div></section>`;
+  }
+  function labToolPanel(){
+    if(state.labTool==='delegacao') return `<div class="lab-canvas"><aside class="lab-brief"><div><span class="micro">DELEGAÇÃO</span><h2>Quanto acompanhar?</h2><p>Explore uma heurística simples: quanto menor a clareza ou a experiência observada, maior a necessidade de estrutura e verificação.</p></div><span class="micro">NÃO É TESTE PSICOMÉTRICO</span></aside><div class="lab-panel">
+      <div class="field"><label for="deleg-clarity">Clareza do resultado e das regras</label><select id="deleg-clarity" data-tool-field><option value="clara">Clara: resultado, limites e padrão definidos</option><option value="incerta">Incerta: faltam critérios ou responsabilidade</option></select></div>
+      <div class="field"><label for="deleg-experience">Domínio demonstrado da pessoa</label><select id="deleg-experience" data-tool-field><option value="iniciante">Iniciante nesta responsabilidade</option><option value="desenvolvendo">Em desenvolvimento</option><option value="experiente">Experiente em tarefas comparáveis</option></select></div>
+      <div class="field"><label for="deleg-risk">Custo potencial de uma falha</label><select id="deleg-risk" data-tool-field><option value="baixo">Baixo ou facilmente reversível</option><option value="alto">Alto ou difícil de reverter</option></select></div>
+      <div class="tool-output" aria-live="polite"><span class="result-label">ORIENTAÇÃO CONTEXTUAL</span><h3 id="deleg-title"></h3><p id="deleg-text"></p><ul id="deleg-actions"></ul></div><p class="tool-note">Heurística editorial da Koor; adapte à função, segurança, políticas da organização e necessidades reais de quem executa. Não classifica pessoas.</p></div></div>`;
+    if(state.labTool==='conversa')return `<div class="lab-canvas"><aside class="lab-brief"><div><span class="micro">PREPARAÇÃO DE FEEDBACK</span><h2>Conversa que produz acordo.</h2><p>Prepare uma reunião curta com observação objetiva, escuta e próximos passos. O texto é gerado somente neste navegador.</p></div><span class="micro">INSUMO PARA UMA CONVERSA REAL</span></aside><div class="lab-panel">
+      <div class="field"><label for="talk-context">Situação</label><input id="talk-context" data-tool-field placeholder="Ex.: alinhamento de entregas da equipe"></div>
+      <div class="field"><label for="talk-fact">Fato observável (sem julgar intenção)</label><textarea id="talk-fact" data-tool-field placeholder="Ex.: duas entregas ficaram sem atualização até o prazo previsto"></textarea></div>
+      <div class="field-grid"><div class="field"><label for="talk-question">Pergunta para ouvir</label><input id="talk-question" data-tool-field placeholder="O que dificultou a entrega?"></div><div class="field"><label for="talk-expectation">Resultado e critério esperado</label><input id="talk-expectation" data-tool-field placeholder="Responsável e prazo de revisão"></div></div>
+      <div class="tool-output"><span class="result-label">ROTEIRO GERADO</span><pre id="tool-preview" aria-live="polite"></pre></div><div class="tool-actions"><button class="solid-link" data-copy-preview>Copiar roteiro ${arrow}</button></div><p class="tool-note">Evite registrar dados sensíveis ou avaliações pessoais desnecessárias. O roteiro não substitui escuta nem política institucional.</p></div></div>`;
+    return `<div class="lab-canvas"><aside class="lab-brief"><div><span class="micro">REGISTRO DE DECISÃO</span><h2>O raciocínio precisa deixar rastros.</h2><p>Registre alternativas, critérios e a evidência que faria você mudar de ideia antes de executar uma escolha relevante.</p></div><span class="micro">REGISTRO DE DECISÃO · MODELO EDITORIAL</span></aside><div class="lab-panel">
+      <div class="field"><label for="decision-object">Decisão em questão</label><input id="decision-object" data-tool-field placeholder="Ex.: fornecedor de um evento"></div>
+      <div class="field"><label for="decision-options">Alternativas consideradas</label><input id="decision-options" data-tool-field placeholder="Opção A; opção B; opção C"></div>
+      <div class="field-grid"><div class="field"><label for="decision-criteria">Critérios principais</label><textarea id="decision-criteria" data-tool-field placeholder="Custo, prazo, qualidade, reversibilidade"></textarea></div><div class="field"><label for="decision-risk">Hipóteses e riscos a verificar</label><textarea id="decision-risk" data-tool-field placeholder="O que ainda não sabemos?"></textarea></div></div>
+      <div class="field"><label for="decision-review">Momento de revisão</label><input id="decision-review" data-tool-field placeholder="Ex.: próxima reunião de acompanhamento"></div>
+      <div class="tool-output"><span class="result-label">REGISTRO GERADO</span><pre id="tool-preview" aria-live="polite"></pre></div><div class="tool-actions"><button class="solid-link" data-copy-preview>Copiar registro ${arrow}</button></div><p class="tool-note">Documento de apoio, sem cálculo automático de risco: critérios precisam ser definidos e ponderados pelas pessoas responsáveis.</p></div></div>`;
+  }
+  function laboratory(){setTitle('Laboratório de liderança');return `<div class="shell"><section class="page-intro page-intro-grid"><div><span class="micro first-in">FERRAMENTAS PARA O COTIDIANO</span><h1 class="serif page-title first-in" style="--delay:80ms">Teoria que cabe na próxima reunião.</h1><p class="page-summary first-in" style="--delay:160ms">Três instrumentos simples para transformar reflexão em prática. Não há pontuação de personalidade, diagnóstico automático nem transmissão das suas respostas.</p></div><aside class="page-side first-in"><span class="side-label"><strong>3</strong> ferramentas de apoio</span><p>Ferramentas sem cadastro e com saída pronta para copiar.</p></aside></section></div>
+    <section class="block-section shell">${label('QUAL FERRAMENTA VOCÊ PRECISA?')}<div class="lab-selector" role="tablist" aria-label="Ferramentas do laboratório">${[['delegacao','Delegação & suporte'],['conversa','Roteiro de feedback'],['decisao','Registro de decisão']].map(([id,n],i)=>`<button class="lab-select ${state.labTool===id?'is-active':''}" data-lab="${id}" role="tab" id="tab-${id}" aria-selected="${state.labTool===id}" aria-controls="lab-tool"><b>${n}</b><span>${state.labTool===id?'SELECIONADO':'ABRIR'} ${arrow}</span></button>`).join('')}</div><div id="lab-tool" role="tabpanel" aria-labelledby="tab-${state.labTool}">${labToolPanel()}</div></section>
+    <section class="lens-section"><div class="shell"><div class="block-head"><div>${label('COMO USAR COM CRITÉRIO')}<h2 class="serif section-title">A ferramenta não<br><em>substitui o discernimento.</em></h2></div><p>O valor de um método está na qualidade da conversa que ele provoca, não na aparência de precisão.</p></div><div class="practice-guidelines">${[['Contexto','A mesma abordagem pode ser útil em uma tarefa e inadequada em outra.'],['Critério','Uma equipe precisa compreender o que conta como resultado e por quê.'],['Revisão','O que aconteceu precisa ajudar a melhorar o processo, não apenas justificar a escolha inicial.']].map(([h,p],i)=>`<article class="guideline-row" data-reveal><span class="guideline-index">${String(i+1).padStart(2,'0')}</span><h3>${h}</h3><p>${p}</p></article>`).join('')}</div></div></section>`;}
+  function updateToolPreview(){
+    if(route()!=='laboratorio')return;
+    const val=id=>(document.getElementById(id)?.value||'').trim();
+    if(state.labTool==='delegacao'){
+      const c=val('deleg-clarity'),e=val('deleg-experience'),r=val('deleg-risk');
+      let title,text,actions;
+      if(c==='incerta'){title='Primeiro, torne a tarefa clara.';text='Sem resultado ou limites definidos, qualquer grau de autonomia fica sujeito a interpretações divergentes.';actions=['Explicitar resultado, restrições e responsável.','Combinar exemplos de qualidade suficiente.','Só então discutir frequência de acompanhamento.'];}
+      else if(e==='iniciante'||r==='alto'){title='Delegue com suporte próximo.';text='A responsabilidade pode avançar, mas o custo da falha ou a experiência atual recomendam orientação, marcos intermediários e critérios explícitos.';actions=['Dividir a tarefa em pontos de decisão.','Combinar um checkpoint curto antes do marco crítico.','Retirar etapas de revisão quando houver domínio demonstrado.'];}
+      else if(e==='desenvolvendo'){title='Autonomia progressiva, revisões combinadas.';text='Dê espaço para escolhas de execução e mantenha momentos de revisão definidos antes do início.';actions=['Permitir que a pessoa proponha o plano.','Revisar premissas, não cada movimento.','Expandir o escopo após entregas consistentes.'];}
+      else{title='Delegue o caminho, acompanhe o resultado.';text='Com critérios claros, baixo risco e experiência comprovada, microgestão tende a adicionar custo sem melhorar o aprendizado.';actions=['Definir a decisão que pode ser tomada sem aprovação.','Combinar sinais de alerta e momento de escalonamento.','Revisar qualidade, aprendizado e oportunidades futuras.'];}
+      const $=id=>document.getElementById(id);if($('deleg-title')){ $('deleg-title').textContent=title;$('deleg-text').textContent=text;$('deleg-actions').innerHTML=actions.map(a=>`<li>${ESC(a)}</li>`).join('');}
+      return;
+    }
+    let result='';
+    if(state.labTool==='conversa')result=`ROTEIRO DE CONVERSA — KOOR\n\n1. CONTEXTO\n${val('talk-context')||'[Descreva a situação]'}\n\n2. OBSERVAÇÃO VERIFICÁVEL\n${val('talk-fact')||'[Descreva fatos sem atribuir intenção]'}\n\n3. ESCUTA\n${val('talk-question')||'Como você enxerga o que aconteceu? Que obstáculos surgiram?'}\n\n4. EXPECTATIVA E ACORDO\n${val('talk-expectation')||'[Registre resultado esperado, responsável, prazo e critério]'}\n\n5. FECHAMENTO\nConfirme o entendimento e combine o momento de revisão.`;
+    else result=`REGISTRO DE DECISÃO — KOOR\n\nDECISÃO\n${val('decision-object')||'[Qual escolha precisa ser feita?]'}\n\nALTERNATIVAS\n${val('decision-options')||'[Liste opções reais, inclusive não agir se relevante]'}\n\nCRITÉRIOS\n${val('decision-criteria')||'[O que importa e como será comparado?]'}\n\nHIPÓTESES / RISCOS\n${val('decision-risk')||'[O que falta saber? O que faria você mudar de ideia?]'}\n\nPONTO DE REVISÃO\n${val('decision-review')||'[Data, evento ou indicador de revisão]'}\n\nNOTA\nEste registro documenta o raciocínio; não garante o resultado.`;
+    const preview=document.querySelector('#tool-preview');if(preview)preview.textContent=result;
+  }
+  function libraryRows(items){return items.map((s,i)=>`<a class="source-row" target="_blank" rel="noopener noreferrer" href="${ESC(s.url)}" aria-label="Consultar ${ESC(s.title)} em fonte externa"><span class="source-index">${String(i+1).padStart(2,'0')}</span><div><h3 class="source-title">${ESC(s.title)}</h3><span class="source-author">${ESC(s.author)}${s.year?' · '+ESC(s.year):''}</span></div><span class="source-type">${ESC(s.type)}<br>${ESC((topic(s.topic)?.short)||'Três lentes')}</span><span class="source-arrow">${arrow}</span></a>`).join('')||`<p style="padding:30px 0">Nenhuma referência encontrada. Ajuste a busca ou os filtros.</p>`;}
+  function filterLibrary(){
+    const query=state.query.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    const items=data.sources.filter(s=>{
+      const src=(s.author+' '+s.title+' '+s.type+' '+(topic(s.topic)?.short||'lentes')).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+      return src.includes(query)&&(state.filter==='todos'||s.topic===state.filter)&&(state.kind==='todos'||s.type===state.kind);
+    });
+    const list=document.getElementById('source-results');if(list)list.innerHTML=libraryRows(items);
+    const count=document.getElementById('source-count');if(count)count.textContent=`${items.length} DE ${data.sources.length} REFERÊNCIAS`;
+  }
+  function modelsDiagram(){
+    const transitions=[
+      ['Gerir a si mesmo → Gerir outras pessoas','Trocar a execução individual pelo desenvolvimento e coordenação.'],
+      ['Gerir pessoas → Gerir gestores','Apoiar quem já conduz outras equipes e resultados.'],
+      ['Gerir gestores → Gerir uma função','Integrar capacidades, prioridades e estratégia funcional.'],
+      ['Gerir uma função → Gerir um negócio','Assumir decisões integradas de operação e resultados.'],
+      ['Gerir um negócio → Gerir um grupo','Coordenar negócios e escolher onde alocar recursos.'],
+      ['Gerir um grupo → Gerir uma empresa','Conduzir decisões e valores em escala organizacional.']
+    ];
+    return `<section class="block-section shell" style="padding-top:8px"><div class="block-head"><div>${label('LEITURA VISUAL')}<h2 class="serif section-title">Três lentes,<br><em>três níveis de análise.</em></h2></div><p>Sinek ajuda a discutir direção; Hunter, a qualidade da relação; Charan, Drotter e Noel, a evolução das responsabilidades.</p></div>
+      <div class="models-grid"><article class="model-pane" data-reveal><span class="micro">SIMON SINEK</span><h3>Círculo Dourado</h3><p>O propósito orienta o modo de agir e aquilo que se entrega. É um enquadramento útil para comunicar direção, não uma garantia de desempenho.</p><div class="golden-diagram" role="img" aria-label="Três círculos concêntricos: por quê no centro, como no círculo intermediário e o quê no círculo externo"><div class="golden-ring outer"><span class="ring-label">O QUÊ</span><div class="golden-ring middle"><span class="ring-label">COMO</span><div class="golden-ring inner">POR QUÊ</div></div></div></div><a class="outline-link" href="${ESC(sourceMap.sinek.url)}" target="_blank" rel="noopener noreferrer">Obra de referência ${arrow}</a></article>
+      <article class="model-pane ink" data-reveal><span class="micro">JAMES C. HUNTER</span><h3>Poder não é autoridade.</h3><p>A narrativa de Hunter diferencia capacidade de impor condutas da autoridade que se desenvolve com serviço, relação e responsabilidade.</p><div class="model-pair"><div><span class="micro">PODER FORMAL</span><strong>Conseguir obediência.</strong><p>Uma posição pode obrigar a executar, mesmo sem conquistar confiança.</p></div><div><span class="micro">AUTORIDADE</span><strong>Conquistar legitimidade.</strong><p>Coerência, serviço e cuidado fortalecem disposição para cooperar.</p></div></div><p><b>Contraponto:</b> servir também exige estabelecer limites e responsabilizar pelas entregas.</p><a class="outline-link" href="${ESC(sourceMap.hunter.url)}" target="_blank" rel="noopener noreferrer">Obra de referência ${arrow}</a></article>
+      <article class="model-pane" style="grid-column:1/-1" data-reveal><div style="display:grid;grid-template-columns:.75fr 1.25fr;gap:40px" class="pipeline-model-grid"><div><span class="micro">CHARAN, DROTTER & NOEL</span><h3>Pipeline de liderança</h3><p>O modelo descreve seis mudanças de responsabilidade. Cada passagem requer habilidades, maneiras de usar o tempo e prioridades diferentes. Em equipes pequenas, as primeiras transições costumam ser mais diretamente aplicáveis.</p><a class="outline-link" href="${ESC(sourceMap.pipeline.url)}" target="_blank" rel="noopener noreferrer">Obra de referência ${arrow}</a></div><div class="pipeline-list">${transitions.map(([h,d],i)=>`<div class="pipeline-item"><span>0${i+1}</span><div><b>${ESC(h)}</b><p>${ESC(d)}</p></div></div>`).join('')}</div></div></article></div>
+      <p class="library-note">Comparação editorial: os três modelos operam em planos diferentes e não representam um sistema integrado validado. As traduções das passagens são paráfrases resumidas de um modelo originalmente concebido para organizações com hierarquias formais.</p>
+    </section>`;
+  }
+  function library(){setTitle('Biblioteca de liderança');return `<div class="shell"><section class="page-intro page-intro-grid"><div><span class="micro first-in">ACERVO DE REFERÊNCIAS</span><h1 class="serif page-title first-in" style="--delay:80ms">De onde vêm as ideias.</h1><p class="page-summary first-in" style="--delay:160ms">Uma biblioteca de apoio, com fontes acadêmicas, obras clássicas e autores contemporâneos. O hub interpreta as ideias; não reproduz integralmente os livros.</p></div><aside class="page-side first-in"><span class="side-label"><strong>${data.sources.length}</strong> fontes identificadas</span><p>Referências rastreáveis, organizadas por tema e tipo de material.</p></aside></section></div>
+      <section class="block-section shell"><div class="block-head"><div>${label('OBRAS DE REFERÊNCIA')}<h2 class="serif section-title">Três livros.<br><em>Três perguntas.</em></h2></div><p>Uma base complementar para pensar propósito, relações e desenvolvimento de lideranças.</p></div>
+        <div class="book-index">${data.lenses.map((l,i)=>`<article class="book-row" data-reveal><div class="book-record"><span class="micro">${ESC(l.label)}</span><h3>${ESC(l.name)}</h3><p class="book-author">${ESC(l.author)} · ${l.year}</p></div><p class="book-description">${ESC(l.argument)}</p><div class="book-links"><a target="_blank" rel="noopener noreferrer" href="${ESC(sourceMap[l.source].url)}">Sobre a obra ${arrow}</a><a target="_blank" rel="noopener noreferrer" href="${ESC(l.userPdf)}">${l.id==='pipeline'?'PDF indicado · acesso não confirmado':'Resumo Bookey · material enviado'} ${arrow}</a></div></article>`).join('')}</div>
+        <div class="library-note"><b>Sobre os arquivos indicados:</b> os PDFs de <i>Comece pelo porquê</i> e <i>O monge e o executivo</i> enviados para este projeto são resumos de terceiros produzidos pela Bookey, não os textos integrais. O terceiro PDF do <i>Pipeline de liderança</i> não pôde ser acessado na verificação; a fundamentação foi conferida em referências do autor e do livro.</div>
+      </section>
+      ${modelsDiagram()}
+      <section class="block-section shell" style="padding-top:20px"><div class="block-head"><div>${label('CATÁLOGO')}<h2 class="serif section-title">Encontre um<br><em>fundamento.</em></h2></div><p>Pesquise por autor, obra ou assunto e filtre o catálogo. Os links abrem fontes externas, quando disponíveis.</p></div>
+        <div class="library-controls"><label class="visually-hidden" for="library-search">Pesquisar referências</label><input class="search-field" type="search" id="library-search" placeholder="Buscar autor, obra ou conceito..." value="${ESC(state.query)}">
+          <label class="visually-hidden" for="library-topic">Filtrar trilha</label><select class="search-field" id="library-topic"><option value="todos">Todas as trilhas</option>${topics.map(t=>`<option value="${t.id}" ${state.filter===t.id?'selected':''}>${ESC(t.short)}</option>`).join('')}<option value="lentes" ${state.filter==='lentes'?'selected':''}>Três lentes</option></select>
+          <label class="visually-hidden" for="library-kind">Tipo de fonte</label><select class="search-field" id="library-kind"><option value="todos">Todos os tipos</option>${[...new Set(data.sources.map(s=>s.type))].map(k=>`<option ${state.kind===k?'selected':''}>${ESC(k)}</option>`).join('')}</select></div><div class="library-count" id="source-count"></div><div id="source-results" aria-live="polite"></div>
+        <p class="library-note">As conexões com autores são interpretações aplicadas às situações do hub. Uma referência sustenta o princípio relacionado, mas não deve ser confundida com validação científica das ferramentas editoriais da Koor.</p>
+      </section>`;}
+  function method(){setTitle('Manifesto e método');return `<div class="shell"><section class="page-intro page-intro-grid"><div><span class="micro first-in">SOBRE A KOOR</span><h1 class="serif page-title first-in" style="--delay:80ms">Coordenação é uma forma de responsabilidade.</h1><p class="page-summary first-in" style="--delay:160ms">A Koor parte de uma ideia simples: a qualidade da liderança aparece na forma como as pessoas conseguem trabalhar juntas quando o líder não está no centro de tudo.</p></div><aside class="page-side first-in"><span class="side-label"><strong>Koor.</strong> Nome e conceito</span><p>Do húngaro <i>koordinálás</i> — coordenação — e da sonoridade de <i>core</i>, núcleo.</p></aside></section></div>
+    <section class="about-statement"><div class="shell about-grid"><div data-reveal>${label('O CONCEITO DA MARCA')}<h2>Um núcleo.<br><em>Muitas direções.</em></h2><p>O símbolo original da Koor combina um círculo sólido e um K recortado em espaço negativo. O núcleo dá estabilidade; uma diagonal ultrapassa o limite do círculo e aponta para fora. A composição sugere direção e desenvolvimento sem reduzir a marca a um clichê motivacional.</p><p>O nome é inspirado na ideia de coordenação e evoca foneticamente a palavra inglesa <i>core</i>. Trata-se de um conceito de marca, não de uma afirmação de origem etimológica literal do nome.</p></div><div class="about-logo" data-reveal>${brand('',true)}</div></div></section>
+    <section class="block-section shell"><div class="block-head"><div>${label('QUATRO COMPROMISSOS')}<h2 class="serif section-title">O que orienta<br><em>o método.</em></h2></div><p>Compromissos operacionais para manter este conteúdo útil, honesto e aplicável.</p></div><div class="belief-list">${[['01','Clareza antes da cobrança.','Toda entrega precisa de objetivo, responsabilidade, limites e critério de qualidade.'],['02','Autonomia com apoio.','Delegação é um acordo de decisão e responsabilidade, não abandono.'],['03','Evidência antes da certeza.','Hipóteses devem ser nomeadas, escolhas explicadas e correções permitidas.'],['04','Coerência antes do discurso.','Valores só se tornam cultura quando aparecem em decisões repetidas.']].map(([n,h,p])=>`<div class="belief-row" data-reveal><span class="micro">${n}</span><h3>${h}</h3><p>${p}</p></div>`).join('')}</div></section>
+    <section class="lens-section"><div class="shell"><div class="block-head"><div>${label('SOBRE ESTE CONTEÚDO')}<h2 class="serif section-title">O que é fonte.<br><em>O que é síntese.</em></h2></div><p>Separar referência, interpretação e recomendação evita falsas certezas e atribuições indevidas.</p></div><div class="source-method"><div data-reveal><span class="micro">FONTES CONSULTADAS</span><h3>Obra e pesquisa.</h3><p>Livros e artigos fundamentam noções como autonomia, segurança psicológica, negociação e julgamento sob incerteza. Links para registros e publicações estão na biblioteca.</p></div><div data-reveal><span class="micro">LEITURA E SÍNTESE</span><h3>Síntese pedagógica.</h3><p>As cinco trilhas traduzem ideias para contextos de liderança. As frases e exemplos não são citações literais dos autores.</p></div><div data-reveal><span class="micro">EXERCÍCIOS AUTORAIS</span><h3>Ferramenta própria.</h3><p>Ciclos, cenários, checklists e instrumentos do laboratório são construções didáticas Koor. Não são diagnósticos validados nem substituem políticas da organização.</p></div><div data-reveal><span class="micro">REVISÃO E CONTEXTO</span><h3>Julgamento humano.</h3><p>Nenhuma técnica substitui o contexto, a escuta de envolvidos ou a responsabilidade final por uma decisão e por seus efeitos.</p></div></div></div></section>
+    <section class="block-section shell"><div class="home-quote" style="padding:65px 35px"><div class="quote-grid"><span class="micro">PARA SEGUIR ESTUDANDO</span><div><blockquote>Liderar não é ser <em>indispensável.</em><br>É tornar o time mais capaz.</blockquote><div class="quote-bottom"><p class="subline">Explore um fundamento, teste uma ação, revise o resultado.</p><a class="outline-link" href="#trilhas">Ver trilhas ${arrow}</a></div></div></div></div></section>`;}
+  function render({preserve=false}={}){
+    const before=window.scrollY;
+    const r=route();
+    nav();
+    const header=document.querySelector('.site-header');
+    if(header)document.documentElement.style.setProperty('--koor-header-h',header.offsetHeight+'px');
+    if(r==='inicio')app.innerHTML=indexView();
+    else if(r==='trilhas')app.innerHTML=tracksView();
+    else if(r.startsWith('trilha/'))app.innerHTML=topicView(topic(r.split('/')[1])||topics[0]);
+    else if(r==='laboratorio')app.innerHTML=laboratory();
+    else if(r==='biblioteca')app.innerHTML=library();
+    else if(r==='metodo')app.innerHTML=method();
+    else{location.hash='#inicio';return;}
+    footer();motion();
+    if(r==='biblioteca')filterLibrary();
+    if(r==='laboratorio')updateToolPreview();
+    if(preserve)window.scrollTo({top:before,behavior:'auto'});
+    else window.scrollTo({top:0,behavior:'auto'});
+    progress();
+  }
+  function progress(){const node=document.getElementById('scroll-progress');if(!node)return;const max=document.documentElement.scrollHeight-innerHeight;node.style.transform=`scaleX(${max>0?Math.max(0,Math.min(1,scrollY/max)):0})`;}
+  async function copyText(text){
+    try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);toast('Texto copiado para a área de transferência.');return;}}catch{}
+    const temp=document.createElement('textarea');temp.value=text;temp.style.position='fixed';temp.style.left='-9999px';document.body.appendChild(temp);temp.select();
+    try{const ok=document.execCommand('copy');toast(ok?'Texto copiado para a área de transferência.':'Selecione e copie o texto exibido.');}catch{toast('Selecione e copie o texto exibido.');}finally{temp.remove();}
+  }
+  document.addEventListener('click',event=>{
+    const anchor=event.target.closest('a[data-anchor]');
+    if(anchor){event.preventDefault();const section=document.getElementById(anchor.dataset.anchor);section?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});return;}
+    const goto=event.target.closest('button[data-route]');if(goto){const destination=goto.dataset.route;if(route()===destination){window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}else{location.hash='#'+destination;}return;}
+    const selection=event.target.closest('button[data-lab]');if(selection){
+      const next=selection.dataset.lab;
+      if(next===state.labTool)return;
+      state.labTool=next;
+      document.querySelectorAll('[data-lab]').forEach(el=>{const active=el.dataset.lab===next;el.classList.toggle('is-active',active);el.setAttribute('aria-selected',String(active));el.querySelector('span').innerHTML=(active?'SELECIONADO':'ABRIR')+' '+arrow;});
+      const panel=document.getElementById('lab-tool');
+      if(panel){panel.innerHTML=labToolPanel();panel.setAttribute('aria-labelledby','tab-'+next);}
+      updateToolPreview();
+      document.getElementById('tab-'+next)?.focus({preventScroll:true});
+      return;
+    }
+    const scenario=event.target.closest('button[data-scenario]');if(scenario){const id=scenario.dataset.scenario;const choice=Number(scenario.dataset.choice);const t=topic(id);if(!t)return;const choices=readChoices();choices[id]=choice;saveChoices(choices);document.querySelectorAll(`[data-scenario="${id}"]`).forEach(el=>{const active=Number(el.dataset.choice)===choice;el.classList.toggle('chosen',active);el.setAttribute('aria-pressed',String(active));});const result=document.getElementById('scenario-feedback-'+id);if(result)result.innerHTML=feedbackMarkup(t,choice);return;}
+    const reset=event.target.closest('button[data-reset-plan]');if(reset){const t=topic(reset.dataset.resetPlan);const p=readProgress();p[t.id]=[];saveProgress(p);document.querySelectorAll(`input[data-plan="${t.id}"]`).forEach(el=>el.checked=false);document.getElementById('plan-aside-'+t.id).innerHTML=renderPlanAside(t);return;}
+    const cp=event.target.closest('button[data-copy-plan]');if(cp){const t=topic(cp.dataset.copyPlan);copyText(`PLANO DE APLICAÇÃO — KOOR / ${t.short}\n\n`+t.plan.map(([day,h,d])=>`${day} — ${h}\n${d}`).join('\n\n')+`\n\nPergunta de reflexão: ${t.question}`);return;}
+    if(event.target.closest('[data-copy-preview]')){copyText(document.getElementById('tool-preview')?.textContent||'');}
+  });
+  document.addEventListener('change',event=>{
+    const plan=event.target.closest('input[data-plan]');if(plan){const t=topic(plan.dataset.plan);const i=Number(plan.dataset.step);const p=readProgress();const checked=new Set(p[t.id]||[]);if(plan.checked)checked.add(i);else checked.delete(i);p[t.id]=[...checked];saveProgress(p);const aside=document.getElementById('plan-aside-'+t.id);if(aside)aside.innerHTML=renderPlanAside(t);return;}
+    if(event.target.id==='library-topic'){state.filter=event.target.value;filterLibrary();return;}
+    if(event.target.id==='library-kind'){state.kind=event.target.value;filterLibrary();return;}
+    if(event.target.hasAttribute('data-tool-field'))updateToolPreview();
+  });
+  document.addEventListener('input',event=>{if(event.target.id==='library-search'){state.query=event.target.value;filterLibrary();return;}if(event.target.hasAttribute('data-tool-field'))updateToolPreview();});
+  window.addEventListener('hashchange',()=>render());
+  window.addEventListener('resize',()=>{const h=document.querySelector('.site-header');if(h)document.documentElement.style.setProperty('--koor-header-h',h.offsetHeight+'px');},{passive:true});
+  const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+  document.documentElement.classList.toggle('motion-enabled',!motionPreference.matches && 'IntersectionObserver' in window);
+  motionPreference.addEventListener?.('change',e=>{document.documentElement.classList.toggle('motion-enabled',!e.matches && 'IntersectionObserver' in window);if(e.matches){app.querySelectorAll('[data-reveal]').forEach(n=>n.classList.add('shown'));}});
+  window.addEventListener('scroll',progress,{passive:true});
+  render();
+})();
+
+</script>
+</body>
+</html>
