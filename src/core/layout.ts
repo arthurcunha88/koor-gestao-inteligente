@@ -1,15 +1,36 @@
 import { app, brand, route } from './context';
   export function nav(){
-    const r=route();
-    const links=[['inicio','Início'],['trilhas','Trilhas'],['laboratorio','Laboratório'],['biblioteca','Biblioteca'],['metodo','Sobre']];
+  const r=route();
+  const links=[['inicio','Início'],['trilhas','Trilhas'],['laboratorio','Laboratório'],['biblioteca','Biblioteca'],['metodo','Sobre']];
+  let header=document.querySelector<HTMLElement>('.site-header');
+  if(!header){
     document.querySelector<HTMLElement>('#site-header')!.innerHTML=`<header class="site-header">
       <div class="shell header-main">
-        <a class="brand" href="#inicio" aria-label="Koor, voltar ao início">${brand()}<span class="brand-type"><span class="brand-word">Koor</span><span class="brand-caption">gestão inteligente</span></span></a>
-        <nav class="main-nav" aria-label="Navegação principal">${links.map(([id,n])=>`<button class="nav-btn ${((r.startsWith('trilha')&&id==='trilhas')||r===id)?'is-active':''}" data-route="${id}" ${((r.startsWith('trilha')&&id==='trilhas')||r===id)?'aria-current="page"':''}>${n}</button>`).join('')}</nav>
+        <a class="brand" href="#inicio" aria-label="Koor — Gestão Inteligente, voltar ao início">${brand()}<span class="brand-type"><span class="brand-word">Koor</span><span class="brand-caption">gestão inteligente</span></span></a>
+        <nav class="main-nav" aria-label="Navegação principal">${links.map(([id,n])=>`<button class="nav-btn" data-route="${id}">${n}</button>`).join('')}<span class="nav-indicator" aria-hidden="true"></span></nav>
         <div class="header-right"><button class="header-tool" data-route="biblioteca" aria-label="Ir para a biblioteca" title="Biblioteca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></div>
       </div><div class="scroll-progress" id="scroll-progress"></div>
     </header>`;
+    header=document.querySelector<HTMLElement>('.site-header');
   }
+  header?.querySelectorAll<HTMLButtonElement>('.nav-btn').forEach(button=>{
+    const dest=button.dataset.route||'inicio';
+    const selected=dest===r||(dest==='trilhas'&&r.startsWith('trilha/'));
+    button.classList.toggle('is-active',selected);
+    if(selected)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+  });
+  requestAnimationFrame(syncNavIndicator);
+}
+  export function syncNavIndicator(){
+  const menu=document.querySelector<HTMLElement>('.main-nav');
+  const active=menu?.querySelector<HTMLButtonElement>('.nav-btn.is-active');
+  const marker=menu?.querySelector<HTMLElement>('.nav-indicator');
+  if(!menu||!active||!marker)return;
+  const x=active.offsetLeft;
+  const w=active.offsetWidth;
+  marker.style.transform=`translate3d(${x}px,0,0) scaleX(${w/100})`;
+  marker.classList.add('is-ready');
+}
   export function footer(){
     document.querySelector<HTMLElement>('#site-footer')!.innerHTML=`<footer class="site-footer"><div class="shell">
       <div class="footer-grid"><div><div class="footer-mark">${brand('',true)} Koor</div><p class="footer-description">Um hub para estudar liderança com menos ruído visual, mais clareza de uso e mais espaço para aplicar as ideias na equipe.</p></div>

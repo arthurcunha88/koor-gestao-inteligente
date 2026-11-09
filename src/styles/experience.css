@@ -1,0 +1,115 @@
+
+/* Koor — acabamento editorial: fotografia sem cortes, navegação persistente e motion funcional. */
+:root{--koor-nav-ease:cubic-bezier(.22,1,.36,1)}
+.site-header{background:var(--paper);backdrop-filter:none}
+.header-main{height:82px;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,2vw,32px)}
+.brand{gap:11px;align-items:center}
+.brand svg{width:43px;height:43px;flex-basis:43px;transition:transform .42s var(--koor-nav-ease)}
+.brand:hover svg{transform:rotate(-5deg) scale(1.035)}
+.brand-word{font:700 31px/1 Arial,Helvetica,sans-serif;letter-spacing:-.072em}
+.brand-caption{font:400 11px/1.2 Arial,Helvetica,sans-serif;letter-spacing:0;text-transform:none;opacity:.72;margin-top:3px}
+.main-nav{position:relative;justify-self:center;display:flex;align-items:stretch;gap:2px;min-width:0}
+.nav-btn{height:82px;padding:0 16px;font:600 14px Arial,Helvetica,sans-serif;letter-spacing:0;z-index:1;transition:opacity .18s var(--koor-nav-ease)}
+.main-nav .nav-btn::after{display:none}
+.nav-btn.is-active{opacity:1}
+.nav-btn:hover{opacity:.68}
+.nav-indicator{position:absolute;left:0;bottom:15px;z-index:2;width:100px;height:2px;background:var(--accent);opacity:0;transform-origin:0 50%;transform:translate3d(0,0,0) scaleX(0);transition:transform .42s var(--koor-nav-ease),opacity .18s var(--koor-nav-ease);pointer-events:none}
+.nav-indicator.is-ready{opacity:1}
+.header-tool{transition:transform .2s var(--koor-nav-ease);flex-shrink:0}
+.header-tool:hover{transform:translate3d(0,-2px,0)}
+.scroll-progress{height:2px;bottom:0;background:var(--accent)}
+/* Frames preserve the source 4:3 photographs rather than cropping heads and hands. */
+.hero-photo,.page-visual img,.visual-band-grid img,.module-grid-v3 .module-thumb img{
+  display:block;width:100%;height:auto!important;min-height:0!important;aspect-ratio:4/3;object-fit:contain!important;object-position:center
+}
+.module-grid-v3 .module-thumb{height:auto!important;aspect-ratio:4/3;background:var(--sand)}
+.module-grid-v3 .module-thumb img{transform:none!important}
+.visual-band-grid figure{min-width:0}
+/* Trails introduction: the symbol is an intentional visual anchor, not a decorative badge. */
+.tracks-intro{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.84fr);gap:clamp(24px,4vw,70px);align-items:stretch;border-bottom:1px solid var(--border);padding:70px 0 80px}
+.tracks-intro-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:25px;min-width:0}
+.tracks-overline{font:600 13px/1.5 Arial,Helvetica,sans-serif;letter-spacing:0;margin:0;color:var(--accent)}
+.tracks-intro-copy h1{font-size:clamp(55px,6.3vw,100px);line-height:.97;max-width:11ch;letter-spacing:-.045em;margin:0}
+.tracks-intro-copy h1 em{font-weight:400}
+.tracks-intro-lead{font:400 clamp(15px,1.2vw,17px)/1.75 Arial,Helvetica,sans-serif;max-width:54ch;margin:0}
+.tracks-intro-link{display:inline-flex;align-items:center;gap:20px;padding-bottom:9px;border-bottom:1px solid currentColor;font:700 13px Arial,Helvetica,sans-serif;margin-top:3px}
+.tracks-intro-link span{display:inline-block;transition:transform .24s var(--koor-nav-ease)}
+.tracks-intro-link:hover span{transform:translate3d(0,4px,0)}
+.tracks-brand-panel{min-height:490px;background:var(--accent);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:clamp(25px,3vw,40px);overflow:hidden}
+.tracks-brand-symbol{width:min(100%,300px);aspect-ratio:1;display:grid;place-items:center;margin:auto}
+.tracks-brand-emblem{width:min(100%,245px);height:auto;aspect-ratio:1;transition:transform .78s var(--koor-nav-ease);transform-origin:center}
+.tracks-brand-panel:hover .tracks-brand-emblem{transform:rotate(-5deg) scale(1.04)}
+.tracks-brand-signature{display:flex;justify-content:space-between;gap:16px;align-items:baseline;border-top:1px solid rgba(250,246,241,.35);padding-top:18px;width:100%}
+.tracks-brand-signature strong{font:700 clamp(29px,3vw,42px)/1 Arial,Helvetica,sans-serif;letter-spacing:-.072em}
+.tracks-brand-signature span{font:500 12px Arial,Helvetica,sans-serif;letter-spacing:0;opacity:.88}
+.tracks-list-section{padding:88px 0 115px}
+.tracks-list-head{display:grid;grid-template-columns:1.1fr .7fr;align-items:end;gap:45px;margin-bottom:34px}
+.tracks-list-head h2{font:400 clamp(30px,3.4vw,49px)/1.07 var(--display);letter-spacing:-.034em;margin:0;max-width:18ch}
+.tracks-list-head p{font:400 14px/1.7 Arial,Helvetica,sans-serif;margin:0;max-width:42ch}
+.trail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.trail-card{min-width:0;border:1px solid var(--border);background:var(--paper);color:var(--ink);display:flex;flex-direction:column;overflow:hidden;text-decoration:none}
+.trail-card:hover{background:var(--sand)}
+.trail-card--featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);min-height:425px}
+.trail-card-copy{display:flex;flex-direction:column;align-items:flex-start;gap:20px;min-width:0;padding:30px;flex:1;order:2}
+.trail-card--featured .trail-card-copy{order:0;padding:clamp(32px,3.2vw,55px)}
+.trail-card-category{font:600 12px/1.5 Arial,Helvetica,sans-serif;color:var(--accent);letter-spacing:.01em;text-transform:none}
+.trail-card h3{font:400 clamp(35px,3.7vw,54px)/.99 var(--display);letter-spacing:-.04em;margin:0;max-width:16ch}
+.trail-card--featured h3{font-size:clamp(48px,5.2vw,75px);max-width:12ch}
+.trail-card p{font:400 14px/1.75 Arial,Helvetica,sans-serif;max-width:50ch;margin:0;opacity:.85}
+.trail-card-foot{display:flex;align-items:center;gap:14px;width:100%;margin-top:auto;border-top:1px solid var(--border);padding-top:16px;font:500 12px Arial,Helvetica,sans-serif}
+.trail-card-arrow{font:400 23px/1 Arial,Helvetica,sans-serif;margin-left:auto;display:inline-block;transition:transform .25s var(--koor-nav-ease)}
+.trail-card:hover .trail-card-arrow{transform:translate3d(4px,-3px,0)}
+.trail-progress{width:clamp(42px,7vw,105px);height:3px;overflow:hidden;background:rgba(46,26,16,.14)}
+.trail-progress span{display:block;width:100%;height:100%;background:var(--accent);transform-origin:left;transition:transform .36s var(--koor-nav-ease)}
+.trail-art{min-width:0;width:100%;aspect-ratio:4/3;margin:0;background:var(--sand);order:1;display:grid;place-items:center;overflow:hidden}
+.trail-art--photo img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;aspect-ratio:4/3}
+.trail-card--featured .trail-art{order:1;aspect-ratio:auto;min-height:425px}
+.trail-art--diagram{padding:clamp(20px,3vw,55px);color:var(--accent)}
+.trail-art--diagram svg{width:100%;height:100%;max-height:330px;transition:transform .58s var(--koor-nav-ease);transform-origin:center}
+.trail-card:hover .trail-art--diagram svg{transform:translate3d(0,-5px,0) rotate(-2deg)}
+.trail-art--trust{background:var(--accent);color:var(--paper)}
+/* Animation is limited to opacity and transforms on content already in the viewport. */
+.motion-enabled .trail-card[data-reveal]{transition:opacity .62s var(--koor-nav-ease),transform .62s var(--koor-nav-ease);transition-delay:var(--reveal-lag,0ms)}
+.motion-enabled .trail-card[data-reveal]:not(.shown){opacity:0;transform:translate3d(0,18px,0)}
+.motion-enabled .trail-card[data-reveal].shown{opacity:1;transform:translate3d(0,0,0)}
+/* Responsive: genuine horizontal nav with no crowding or clipped logo. */
+@media(max-width:1080px){
+  .header-main{gap:16px}.nav-btn{padding:0 12px}
+  .tracks-intro{grid-template-columns:minmax(0,1fr) minmax(290px,.9fr)}
+  .tracks-intro-copy h1{font-size:clamp(52px,6.4vw,85px)}
+}
+@media(max-width:800px){
+  .header-main{height:auto;min-height:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:13px 0 0;gap:10px}
+  .brand svg{width:36px;height:36px;flex-basis:36px}
+  .brand-word{font-size:29px}
+  .main-nav{order:3;justify-self:stretch;width:100%;height:52px;gap:0;min-width:0;overflow-x:auto;overflow-y:hidden;white-space:nowrap;justify-content:flex-start;scrollbar-width:none;scroll-snap-type:x proximity;overscroll-behavior-x:contain}
+  .main-nav::-webkit-scrollbar{display:none}
+  .nav-btn{height:52px;padding:0 16px;flex:0 0 auto;font-size:13px;scroll-snap-align:start}
+  .nav-indicator{bottom:1px}
+  .tracks-intro{padding:52px 0 62px;gap:28px;grid-template-columns:1fr}
+  .tracks-intro-copy h1{font-size:clamp(54px,9vw,88px);max-width:14ch}
+  .tracks-brand-panel{min-height:330px}
+  .tracks-brand-emblem{width:min(100%,190px)}
+  .tracks-brand-symbol{width:min(100%,250px)}
+  .tracks-list-section{padding:62px 0 85px}
+  .tracks-list-head{grid-template-columns:1fr;gap:18px}
+  .trail-grid{grid-template-columns:1fr}
+  .trail-card--featured{grid-column:auto;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:0}
+  .trail-card--featured .trail-art{min-height:0}
+  .trail-card--featured h3{font-size:clamp(39px,5.4vw,55px)}
+}
+@media(max-width:620px){
+  .tracks-intro-copy h1{font-size:clamp(48px,12vw,72px)}
+  .tracks-brand-panel{min-height:310px}
+  .tracks-brand-signature strong{font-size:33px}
+  .trail-card--featured{display:flex}
+  .trail-card--featured .trail-art{order:1;aspect-ratio:4/3;min-height:0}
+  .trail-card--featured .trail-card-copy{order:2;padding:30px}
+  .trail-card h3,.trail-card--featured h3{font-size:clamp(35px,9vw,49px)}
+  .trail-card-copy{padding:27px}
+  .trail-card-foot{gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav-indicator,.brand svg,.tracks-brand-emblem,.trail-card-arrow,.trail-art--diagram svg,.trail-progress span{transition:none!important}
+  .motion-enabled .trail-card[data-reveal],.motion-enabled .trail-card[data-reveal]:not(.shown){opacity:1!important;transform:none!important;transition:none!important}
+}
