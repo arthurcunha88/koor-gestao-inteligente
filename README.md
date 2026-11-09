@@ -1,0 +1,1 @@
+# koor-gest-o-inteligente
