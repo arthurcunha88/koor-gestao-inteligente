@@ -1,0 +1,37 @@
+import { data, topics, sourceMap, state, ESC, brand, tLink, topic, label, arrow, countCompleted, readProgress, readChoices, topicVisual, topicVisualAlt, visuals, visualAlt } from '../core/context';
+import { setTitle } from '../core/layout';
+import type { Topic, Source } from '../types';
+import { } from './topic';
+  export function home(){
+    setTitle('Um espaço para estudar liderança');
+    const choices=[
+      ['Minha equipe depende de mim para decidir.','Pessoas e autonomia','pessoas','Rever acordos de responsabilidade e o nível de suporte.'],
+      ['A conversa acontece, mas nada muda.','Comunicação e feedback','comunicacao','Transformar percepções em fatos, expectativas e compromissos.'],
+      ['Temos opções, mas não temos critérios.','Decisão e pensamento','decisoes','Distinguir evidências, hipóteses e riscos antes de escolher.'],
+      ['Duas áreas não conseguem chegar a um acordo.','Conflitos e negociação','conflitos','Separar interesses, responsabilidades e critérios de decisão.'],
+      ['As regras parecem mudar conforme a pessoa.','Ética e confiança','etica','Construir coerência entre critérios declarados e decisões tomadas.']
+    ];
+    return `<div class="shell"><section class="home-hero" aria-labelledby="home-title">
+      <div class="home-left">
+        <p class="hero-overline first-in" style="--delay:30ms">Hub de liderança para estudar, aplicar e revisar decisões.</p>
+        <h1 class="serif home-title first-in" id="home-title" style="--delay:95ms">Liderar bem é criar <em>clareza para que mais pessoas consigam agir.</em></h1>
+        <div class="home-intro first-in" style="--delay:170ms"><p>A Koor organiza conteúdos, casos e ferramentas de liderança em uma estrutura simples. Menos enfeite. Mais orientação prática para conversas, responsabilidades e escolhas difíceis.</p><a href="#trilhas" class="solid-link">Explorar as trilhas ${arrow}</a></div>
+      </div>
+      <div class="home-right visual-panel first-in" style="--delay:220ms"><img class="hero-photo" src="${visuals.hero}" alt="${visualAlt.hero}"><div class="visual-panel-caption"><strong>Coordenação com presença.</strong><span>Conteúdo visual, fundamentos e aplicação para quem lidera gente de verdade.</span></div></div>
+    </section>
+    <div class="home-stats"><div class="stat"><span class="stat-number">5</span><span class="stat-label">trilhas centrais para estudar liderança</span></div><div class="stat"><span class="stat-number">3</span><span class="stat-label">ferramentas aplicadas para reuniões e decisões</span></div><div class="stat"><span class="stat-number">24</span><span class="stat-label">referências reunidas na biblioteca</span></div><div class="stat"><span class="stat-number">1</span><span class="stat-label">hub integrado para leitura e prática</span></div></div>
+    <div class="entry-intro" data-reveal><div><span class="section-eyebrow">Por onde começar</span><h2>Escolha o problema que mais se parece com o seu contexto.</h2></div><p>Você não precisa percorrer tudo em sequência. A melhor entrada é a situação que sua equipe já está vivendo.</p></div>
+    <div class="entry-table">${choices.map(([q,name,id,detail],i)=>`<a class="entry-row" href="${tLink(id)}" data-reveal><span class="entry-n">${String(i+1).padStart(2,'0')}</span><div class="entry-question">${ESC(q)}</div><div class="entry-answer"><strong>${ESC(name)}</strong><small>${ESC(detail)}</small></div><span class="entry-arrow">${arrow}</span></a>`).join('')}</div>
+    </div>
+    <section class="block-section shell" id="trilhas"><div class="block-head" data-reveal><div>${label('Cinco trilhas')}<h2 class="serif section-title">Estude um tema por vez, sem perder o conjunto.</h2></div><p>Cada trilha reúne fundamentos, contrapontos, um caso, indicadores e um plano curto de aplicação.</p></div>
+      <div class="module-grid module-grid-v3">${topics.map((t,i)=>`<a href="${tLink(t.id)}" class="module-card ${i===0?'featured':''}" aria-label="Abrir tema: ${ESC(t.short)}"><div class="module-thumb"><img src="${topicVisual(t.id)}" alt="${topicVisualAlt(t.id)}"></div><div class="module-card-header"><span class="num">Trilha ${t.num}</span><span class="mini-progress">${Math.round(countCompleted(t)/t.plan.length*100)}%</span></div><div><h3 class="card-title">${ESC(t.short)}</h3><p class="card-summary">${ESC(t.lead)}</p></div><div class="card-foot"><span>${countCompleted(t)} de ${t.plan.length} ações registradas</span>${arrow}</div></a>`).join('')}</div>
+    </section>
+    <section class="visual-band shell" data-reveal><div class="visual-band-copy">${label('Cenas de liderança')}<h2 class="serif section-title">O trabalho de liderar também é relacional.</h2><p class="subline">Por isso o hub passou a incorporar imagens editoriais: elas aliviam a densidade do texto e aproximam o estudo de situações humanas reais.</p></div><div class="visual-band-grid"><figure><img src="${visuals.coaching}" alt="${visualAlt.coaching}"><figcaption>Conversa individual e escuta ativa.</figcaption></figure><figure><img src="${visuals.workshop}" alt="${visualAlt.workshop}"><figcaption>Coordenação coletiva e priorização.</figcaption></figure></div></section>
+    <section class="lens-section"><div class="shell"><div class="block-head" data-reveal><div>${label('Leituras em diálogo')}<h2 class="serif section-title">Três autores. <br><em>Perguntas diferentes.</em></h2></div><p>Sinek, Hunter e Charan ajudam a pensar propósito, relações e passagem de responsabilidade. A força do hub está em colocar essas vozes em conversa.</p></div>
+      <div class="reading-index">${data.lenses.map((l,i)=>`<article class="reading-row" data-reveal><div class="reading-meta"><span>${ESC(l.author)}</span><small>${l.year} · ${ESC(l.name)}</small></div><h3>${ESC(l.question)}</h3><div class="reading-note"><p>${ESC(l.argument)}</p><a href="#biblioteca">Ver referência ${arrow}</a></div></article>`).join('')}</div></div></section>
+    <section class="block-section shell"><div class="block-head" data-reveal><div>${label('Da ideia à conduta')}<h2 class="serif section-title">Gestão aparece na forma como você conduz o cotidiano.</h2></div><p>O contraste abaixo não classifica pessoas. Ele mostra como pequenas decisões gerenciais alteram a qualidade do trabalho coletivo.</p></div><div class="comparison-strip">${[['Liderar tudo sozinho','Concentrar a decisão, corrigir tarde e gerar dependência.'],['Organizar o trabalho em conjunto','Explicitar critérios, distribuir responsabilidade e revisar com método.']].map(([h,p],i)=>`<article class="compare-card" data-reveal><span class="micro">${i===0?'Risco frequente':'Condução desejável'}</span><h3>${h}</h3><p>${p}</p></article>`).join('')}</div></section>
+    <section class="home-quote"><div class="shell quote-grid" data-reveal><span class="quote-kicker">A prática começa aqui</span><div><blockquote>Menos respostas prontas.<br>Mais <em>critérios para agir.</em></blockquote><div class="quote-bottom"><p class="subline">Prepare uma delegação, uma conversa de feedback ou uma decisão relevante com ferramentas que você pode adaptar à sua equipe.</p><a class="outline-link" href="#laboratorio">Ir para as ferramentas ${arrow}</a></div></div></div></section>`;
+  }
+
+  export function indexView(){return home();}
+

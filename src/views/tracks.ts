@@ -1,0 +1,10 @@
+import { data, topics, sourceMap, state, ESC, brand, tLink, topic, label, arrow, countCompleted, readProgress, readChoices, topicVisual, topicVisualAlt, visuals, visualAlt } from '../core/context';
+import { setTitle } from '../core/layout';
+import type { Topic, Source } from '../types';
+  export function tracksView(){
+    setTitle('Trilhas de liderança');
+    return `<div class="shell"><section class="page-intro page-intro-grid page-intro-v3"><div><span class="section-eyebrow first-in">Percurso de estudo</span><h1 class="serif page-title first-in" style="--delay:80ms">Cinco trilhas para ler, aplicar e revisar.</h1><p class="page-summary first-in" style="--delay:160ms">Os temas são independentes, mas se reforçam mutuamente. Você pode entrar por qualquer um deles.</p></div><aside class="page-visual page-visual-compact first-in"><img src="${visuals.workshop}" alt="${visualAlt.workshop}"><p>Progresso simples: cada trilha mostra quantas ações você já registrou neste navegador.</p></aside></section></div>
+    <section class="block-section shell"><div class="module-grid module-grid-v3">${topics.map((t,i)=>`<a href="${tLink(t.id)}" class="module-card ${i===0?'featured':''}"><div class="module-thumb"><img src="${topicVisual(t.id)}" alt="${topicVisualAlt(t.id)}"></div><div class="module-card-header"><span class="num">Trilha ${t.num}</span><span class="mini-progress">${countCompleted(t)}/${t.plan.length}</span></div><div><h2 class="card-title">${ESC(t.short)}</h2><p class="card-summary">${ESC(t.lead)}</p></div><div class="card-foot"><span>${countCompleted(t)} ações marcadas</span>${arrow}</div></a>`).join('')}</div></section>
+    <section class="home-quote"><div class="shell quote-grid"><span class="quote-kicker">Sugestão de percurso</span><div><blockquote>Comece pelas pessoas.<br>Construa <em>clareza.</em><br>Depois sustente decisões.</blockquote><div class="quote-bottom"><p class="subline">É uma sugestão editorial. Não é um caminho obrigatório.</p><a href="#trilha/pessoas" class="outline-link">Começar pela trilha de pessoas ${arrow}</a></div></div></div></section>`;
+  }
+
