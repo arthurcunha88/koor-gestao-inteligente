@@ -1,0 +1,193 @@
+/* Koor | Hero e assinatura de marca.
+   Corrige o excesso de altura da dobra inicial sem cortar a fotografia. */
+.brand{
+  min-height:60px;
+  gap:14px;
+}
+.brand .koor-mark{
+  display:block;
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  overflow:visible;
+  transform-origin:center;
+  transition:transform .36s cubic-bezier(.22,1,.36,1);
+}
+.brand:hover .koor-mark{
+  transform:rotate(-3deg) scale(1.025);
+}
+.brand .brand-type{
+  justify-content:center;
+  gap:3px;
+}
+.brand .brand-word{
+  font-size:32px;
+  line-height:1;
+}
+.brand .brand-caption{
+  margin-top:0;
+  font-size:11px;
+  line-height:1.25;
+  opacity:.76;
+}
+
+.home-hero{
+  grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);
+  min-height:0;
+  align-items:stretch;
+  padding-top:24px;
+}
+.home-left{
+  min-width:0;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:clamp(18px,1.9vw,28px);
+  padding:clamp(38px,3.8vw,68px) clamp(28px,3vw,56px) clamp(42px,4.3vw,70px) 0;
+}
+.home-title{
+  font-size:clamp(54px,4.65vw,82px);
+  line-height:.965;
+  max-width:16ch;
+  letter-spacing:-.047em;
+  text-wrap:balance;
+  overflow-wrap:normal;
+  margin:0;
+}
+.hero-overline{
+  margin:0;
+  max-width:45ch;
+  font-size:13px;
+  line-height:1.6;
+}
+.home-intro{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  width:100%;
+  gap:22px;
+  padding:0;
+}
+.home-intro p{
+  font-size:15px;
+  line-height:1.72;
+  margin:0;
+  max-width:49ch;
+}
+.home-intro .solid-link{
+  min-height:50px;
+}
+.home-right.visual-panel{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  min-height:0;
+  height:auto;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:0;
+  overflow:hidden;
+  border-left:1px solid var(--border);
+  border-top:0;
+  background:var(--sand);
+  color:var(--ink);
+}
+.home-right.visual-panel > .hero-photo{
+  width:100%;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:4/3;
+  display:block;
+  flex:0 0 auto;
+  object-fit:contain!important;
+  object-position:center;
+  border:0;
+}
+.home-right.visual-panel > .visual-panel-caption{
+  flex:1 0 auto;
+  min-height:150px;
+  margin:0;
+  padding:clamp(23px,2.6vw,40px);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:11px;
+  background:var(--accent);
+  color:var(--paper);
+  border:0;
+}
+.home-right.visual-panel .visual-panel-caption strong{
+  font:400 clamp(28px,2.6vw,40px)/1.06 var(--display);
+  letter-spacing:-.028em;
+  color:var(--paper);
+}
+.home-right.visual-panel .visual-panel-caption span{
+  font:400 14px/1.68 Arial,Helvetica,sans-serif;
+  letter-spacing:0;
+  color:var(--paper);
+  opacity:.88;
+  max-width:47ch;
+}
+@media(max-width:1120px){
+  .home-hero{
+    grid-template-columns:minmax(0,1fr);
+    padding-top:0;
+  }
+  .home-left{
+    padding:clamp(38px,5vw,62px) 0 clamp(42px,5vw,64px);
+  }
+  .home-title{
+    font-size:clamp(57px,7.2vw,80px);
+    max-width:17ch;
+  }
+  .home-right.visual-panel{
+    border-left:0;
+    border-top:1px solid var(--border);
+  }
+  .home-right.visual-panel .visual-panel-caption{
+    min-height:145px;
+  }
+}
+@media(max-width:600px){
+  .brand{gap:11px;min-height:52px}
+  .brand .koor-mark{
+    width:40px;
+    height:40px;
+    flex-basis:40px;
+  }
+  .brand .brand-word{font-size:29px}
+  .brand .brand-caption{font-size:10.5px}
+  .home-left{
+    padding:35px 0 42px;
+    gap:20px;
+    min-height:0;
+  }
+  .home-title{
+    font-size:clamp(43px,10vw,61px);
+    max-width:100%;
+    line-height:.99;
+    letter-spacing:-.04em;
+  }
+  .hero-overline{font-size:12px}
+  .home-intro{gap:18px}
+  .home-intro p{font-size:14px;line-height:1.7}
+  .home-right.visual-panel .visual-panel-caption{
+    padding:24px;
+    min-height:137px;
+  }
+  .home-right.visual-panel .visual-panel-caption strong{
+    font-size:29px;
+  }
+  .home-right.visual-panel .visual-panel-caption span{
+    font-size:13px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .brand .koor-mark{transition:none!important}
+}

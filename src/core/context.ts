@@ -10,7 +10,13 @@ import type { Topic, Source, HubState, ProgressRecord, ChoiceRecord } from '../t
   const app = document.querySelector<HTMLElement>('#app')!;
   const state: HubState = {labTool:'delegacao',query:'',filter:'todos',kind:'todos'};
   const ESC = (s: unknown) => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'} as Record<string,string>)[c]);
-  const brand = (className: string = '',inverted: boolean = false) => `<svg class="${className}" viewBox="96 96 208 208" role="img" aria-label="Símbolo Koor" style="color:${inverted?'var(--paper)':'var(--accent)'}"><use href="#koor-symbol" width="100%" height="100%"></use></svg>`;
+  let logoSequence = 0;
+  const brand = (className: string = '', inverted: boolean = false) => {
+    const maskId = `koor-logo-mask-${++logoSequence}`;
+    return `<svg class="koor-mark ${className}" viewBox="0 0 100 100" aria-hidden="true" focusable="false" style="color:${inverted ? 'var(--paper)' : 'var(--accent)'}">
+      <defs><mask id="${maskId}" maskUnits="userSpaceOnUse"><rect width="100" height="100" fill="white"/><path d="M33 20.5V81.5 M33 50L94.6 .9 M33 50L72.3 81.2" stroke="black" stroke-width="14.4" fill="none"/></mask></defs>
+      <circle cx="50" cy="50" r="46.4" fill="currentColor" mask="url(#${maskId})"/></svg>`;
+  };
   const route = () => (decodeURIComponent(location.hash.slice(1)) || 'inicio').replace(/^\/+/, '');
   const tLink = (id: string) => `#trilha/${id}`;
   const topic = (id: string) => topics.find(t=>t.id===id);

@@ -2,6 +2,7 @@ import './styles/base.css';
 import './styles/editorial.css';
 import './styles/refinements.css';
 import './styles/experience.css';
+import './styles/hero.css';
 import { app, topics, state, route, topic, readProgress, saveProgress, readChoices, saveChoices, arrow, toast } from './core/context';
 import { nav, footer, motion, syncNavIndicator } from './core/layout';
 import { indexView } from './views/home';
