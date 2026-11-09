@@ -9,7 +9,7 @@ function trailArtwork(t: Topic){
   if(t.id==="etica"){
     return `<div class="trail-art trail-art--diagram trail-art--trust" role="img" aria-label="Três círculos interligados em torno de um centro de confiança"><svg viewBox="0 0 480 360" aria-hidden="true" focusable="false"><g class="trail-diagram-strokes" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="240" cy="174" r="121"/><circle cx="240" cy="174" r="86"/><circle cx="240" cy="174" r="48"/><path d="M240 53v242M119 174h242" opacity=".45"/></g><circle cx="240" cy="174" r="12" fill="currentColor"/><circle cx="240" cy="53" r="7" fill="currentColor"/><circle cx="361" cy="174" r="7" fill="currentColor"/><circle cx="119" cy="174" r="7" fill="currentColor"/></svg></div>`;
   }
-  const photos: Record<string,string> ={pessoas:"assets/coaching.jpg",decisoes:"assets/hero-team.jpg",conflitos:"assets/workshop.jpg"};
+  const photos: Record<string,string> ={pessoas:"assets/koor-mentoring.webp",decisoes:"assets/hero-team.jpg",conflitos:"assets/koor-workshop.webp"};
   const alts: Record<string,string> ={pessoas:"Uma líder escuta uma pessoa da equipe em uma conversa de desenvolvimento.",decisoes:"Liderança orientando uma reunião de decisão coletiva.",conflitos:"Equipe organiza prioridades em um workshop de planejamento."};
   const src=photos[t.id]||"assets/hero-team.jpg";
   return `<figure class="trail-art trail-art--photo"><img src="${src}" alt="${alts[t.id]||'Pessoas trabalhando em equipe.'}" loading="lazy" decoding="async" width="1200" height="900"></figure>`;

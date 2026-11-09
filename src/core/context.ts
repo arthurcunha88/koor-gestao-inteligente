@@ -1,7 +1,7 @@
 import { data } from '../data';
 import type { Topic, Source, HubState, ProgressRecord, ChoiceRecord } from '../types';
-  const visuals={hero:'assets/hero-team.jpg',coaching:'assets/coaching.jpg',workshop:'assets/workshop.jpg'};
-  const visualAlt={hero:'Reunião de liderança colaborativa em uma sala iluminada.',coaching:'Conversa individual de coaching entre líder e liderado.',workshop:'Equipe em workshop de planejamento e priorização.'};
+  const visuals={hero:'assets/koor-collaboration.webp',coaching:'assets/koor-mentoring.webp',workshop:'assets/koor-workshop.webp',closing:'assets/koor-footer.webp'};
+  const visualAlt={hero:'Liderança facilitando uma conversa coletiva de estratégia.',coaching:'Conversa individual de escuta e desenvolvimento entre duas pessoas.',workshop:'Equipe construindo um planejamento conjunto diante de um painel de ideias.',closing:'Equipe reunida em conversa colaborativa após uma sessão de planejamento.'};
   function topicVisual(id: string){return ( {pessoas:visuals.coaching,comunicacao:visuals.coaching,decisoes:visuals.hero,conflitos:visuals.workshop,etica:visuals.hero} as Record<string,string> )[id]||visuals.hero;}
   function topicVisualAlt(id: string){return ( {pessoas:'Conversa de desenvolvimento individual.',comunicacao:'Momento de escuta ativa e feedback.',decisoes:'Reunião de decisão com equipe.',conflitos:'Workshop coletivo para alinhar interesses.',etica:'Equipe debatendo critérios e responsabilidade.'} as Record<string,string> )[id]||visualAlt.hero;}
 

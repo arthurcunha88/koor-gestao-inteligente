@@ -86,6 +86,12 @@ A compilação gera a pasta **dist/**. O TypeScript faz parte do código-fonte; 
 
 **Não** há variáveis de ambiente obrigatórias ou backend nesta versão.
 
+## Atualização editorial das imagens e do rodapé
+
+O site utiliza imagens de liderança geradas por inteligência artificial, com tratamento e otimização WebP para melhorar o carregamento. Os arquivos `koor-collaboration.webp`, `koor-mentoring.webp`, `koor-workshop.webp` e `koor-footer.webp` ilustram respectivamente coordenação, mentoria, trabalho coletivo e encerramento de uma sessão. São imagens conceituais, não registros fotográficos de reuniões reais.
+
+O rodapé é intencionalmente compacto: reúne uma fotografia panorâmica, navegação essencial e atribuição explícita de autoria a **Arthur Andrade Cunha**. As referências bibliográficas completas continuam disponíveis na Biblioteca e neste README.
+
 ## Direção de arte e identidade
 
 A Koor foi pensada como uma experiência editorial, não um template de SaaS. Usa grid assimétrico, tipografia de contraste e movimentos funcionais, com leitura clara e espaço negativo. O núcleo visual deriva do manual de marca fornecido pelo autor: **marrom Koor `#6B3E26`**, **areia `#EADBCF`**, **cacau `#2E1A10`** e **off-white `#FAF6F1`**.
