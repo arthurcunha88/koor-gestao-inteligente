@@ -90,7 +90,7 @@ Também foram consultados estudos de autores como Paulo Freire, Amy Edmondson, P
 
 O projeto contou com **assistência de inteligência artificial** na organização de conteúdos, elaboração de sínteses, produção de imagens ilustrativas e implementação de partes do frontend. As fotografias geradas por IA são representações conceituais, não registros documentais de pessoas ou eventos reais.
 
-Os **direitos autorais sobre as obras de terceiros** citadas permanecem com seus respectivos titulares. A proteção e as possibilidades de uso de conteúdo gerado por IA podem variar conforme a legislação aplicável; a declaração de direitos reservados acima diz respeito às contribuições autorais originais de Arthur Andrade Cunha.
+Os **direitos autorais sobre as obras de terceiros** citadas permanecem com seus respectivos titulares. A declaração de direitos reservados acima diz respeito às contribuições autorais originais de Arthur Andrade Cunha.
 
 **© 2026 Arthur Andrade Cunha — Koor: Gestão Inteligente.**  
 **Todos os direitos reservados sobre o material autoral original.** Não foi concedida licença open-source para reutilização ou redistribuição deste projeto.
