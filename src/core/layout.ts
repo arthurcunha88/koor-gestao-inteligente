@@ -1,4 +1,4 @@
-import { app, brand, route, visuals, visualAlt } from './context';
+import { app, brand, route } from './context';
   export function nav(){
   const r=route();
   const links=[['inicio','Início'],['trilhas','Trilhas'],['laboratorio','Laboratório'],['biblioteca','Biblioteca'],['metodo','Sobre']];
@@ -32,23 +32,25 @@ import { app, brand, route, visuals, visualAlt } from './context';
   marker.classList.add('is-ready');
 }
   export function footer(){
-    document.querySelector<HTMLElement>('#site-footer')!.innerHTML=`<footer class="site-footer"><div class="shell footer-compact">
-      <a class="footer-photo" href="#trilhas" aria-label="Conhecer as trilhas de liderança"><img src="${visuals.closing}" alt="${visualAlt.closing}" width="1200" height="675" loading="lazy" decoding="async"></a>
-      <div class="footer-content">
-        <div class="footer-topline">
-          <div class="footer-identity"><div class="footer-mark">${brand('',true)}<span>Koor</span></div><span class="footer-identity-caption">gestão inteligente</span></div>
-          <nav class="footer-quick-nav" aria-label="Navegação do rodapé">
-            <a href="#inicio">Início</a><a href="#trilhas">Trilhas</a><a href="#laboratorio">Laboratório</a><a href="#biblioteca">Biblioteca</a><a href="#metodo">Sobre</a>
-          </nav>
+    document.querySelector<HTMLElement>('#site-footer')!.innerHTML=`<footer class="site-footer" role="contentinfo">
+      <div class="shell footer-minimal">
+        <div class="footer-minimal-identity">
+          <div class="footer-mark">${brand('',true)}<span>Koor</span></div>
+          <span class="footer-minimal-subtitle">gestão inteligente</span>
         </div>
-        <p class="footer-statement">Liderança exige escuta, clareza e responsabilidade nas decisões.</p>
-        <div class="footer-bottom">
-          <span>© Koor — Gestão Inteligente</span>
+        <div class="footer-minimal-credits">
+          <span>© ${new Date().getFullYear()} Koor — Gestão Inteligente</span>
           <span>Idealização e autoria: Arthur Andrade Cunha</span>
-          <a href="#biblioteca">Referências e créditos</a>
         </div>
+        <a class="footer-instagram" href="https://www.instagram.com/arthurcunha__/" aria-label="Instagram de Arthur Andrade Cunha" title="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="2.3" y="2.3" width="19.4" height="19.4" rx="5.4"></rect>
+            <circle cx="12" cy="12" r="4.15"></circle>
+            <circle cx="17.55" cy="6.45" r=".85" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
       </div>
-    </div></footer>`;
+    </footer>`;
   }
   let revealObserver: IntersectionObserver | null = null;
   export function motion(){
