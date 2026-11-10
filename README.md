@@ -1,116 +1,59 @@
 # Koor — Gestão Inteligente
 
-> Hub de aprendizado aplicado para quem lidera pessoas, coordena trabalho e toma decisões.
+**Uma plataforma de estudo e prática para quem entende a liderança como uma habilidade em constante construção.**
 
-**Idealização, autoria e direção do projeto: Arthur Andrade Cunha** — [@arthurcunha88](https://github.com/arthurcunha88).
+**Acesse a Koor:** [koor-gestao-inteligente.vercel.app](https://koor-gestao-inteligente.vercel.app/#inicio)  
+**Explore a biblioteca:** [Referências e fundamentos](https://koor-gestao-inteligente.vercel.app/#biblioteca)
 
-A **Koor** reúne estudos de liderança em cinco trilhas, apoiados em autores da administração, da educação, da filosofia e da psicologia organizacional. O foco é combinar **evidências, contexto e prática**, evitando recomendações universais ou slogans gerenciais.
+**Idealização, autoria e direção:** **Arthur Andrade Cunha** · [GitHub](https://github.com/arthurcunha88)
 
-## O que o site oferece
+> **© 2026 Arthur Andrade Cunha. Todos os direitos reservados sobre as contribuições originais de sua autoria à Koor — Gestão Inteligente.**  
+> A disponibilização pública deste repositório não concede, por si só, licença para reprodução, modificação, redistribuição ou exploração comercial do código e dos materiais autorais. Obras, marcas e materiais de terceiros mantêm seus respectivos direitos.
 
-- **Gestão de pessoas e autonomia** — desenvolvimento, motivação e delegação.
-- **Comunicação e feedback** — escuta, alinhamento e conversas difíceis.
-- **Decisão e pensamento crítico** — vieses, critérios e decisões sob incerteza.
-- **Conflitos e negociação** — interesses, mediação e acordos.
-- **Ética e confiança** — coerência, integridade e justiça organizacional.
+---
 
-Cada trilha apresenta fundamentos, análise de caso, contrapontos, indicadores de reflexão e um plano prático. O **Laboratório** oferece preparação de feedback, reflexão sobre delegação e registro de decisões. A **Biblioteca** reúne 24 fontes, inclusive os livros indicados para a construção do projeto.
+## Por que criei a Koor
 
-O progresso de ações e respostas de casos é mantido no **localStorage** do navegador. Não há banco de dados, autenticação, sincronização entre dispositivos ou coleta das respostas por servidor.
+A Koor nasceu de uma motivação pessoal: **eu queria me tornar um líder melhor**.
 
-## Arquitetura — TypeScript + Vite
+Ao longo das minhas experiências com equipes, passei a perceber que liderar exige muito mais do que coordenar tarefas ou ocupar uma posição de responsabilidade. Exige saber ouvir, comunicar expectativas, lidar com conflitos, desenvolver pessoas e tomar decisões que considerem tanto os resultados quanto quem participa deles.
 
-A versão inicial era um protótipo de HTML único. Esta versão migrou **100% da lógica e dos dados para TypeScript**, mantendo HTML como ponto de entrada e CSS como linguagem de apresentação. A migração preserva o conteúdo, as cinco trilhas, as ferramentas e a navegação.
+Uma ideia passou a orientar esse processo: **habilidades interpessoais e de gestão podem, sim, ser aprendidas e treinadas**. Não considero a boa liderança um atributo reservado a quem nasce com determinado perfil, personalidade ou facilidade de comunicação. Características individuais influenciam a maneira de liderar, mas não substituem estudo, prática deliberada, feedback e disposição para rever a própria conduta.
 
-```text
-.
-├── index.html                   # estrutura inicial do documento
-├── public/
-│   └── assets/                 # imagens editoriais e símbolo Koor
-├── src/
-│   ├── main.ts                 # inicialização, rotas e eventos de interface
-│   ├── types.ts                # modelos tipados do domínio
-│   ├── core/
-│   │   ├── context.ts          # utilitários, estado e persistência local
-│   │   └── layout.ts           # cabeçalho, rodapé e movimento
-│   ├── data/
-│   │   ├── index.ts            # agregação das fontes e trilhas
-│   │   ├── topics.ts           # agregação dos cinco temas
-│   │   ├── topics/             # dados de cada tema separados
-│   │   ├── lenses.ts           # três lentes: Sinek, Hunter e Charan
-│   │   └── sources.ts          # referências bibliográficas
-│   ├── views/
-│   │   ├── home.ts             # página inicial
-│   │   ├── tracks.ts           # catálogo de trilhas
-│   │   ├── topic.ts            # estudo e prática por trilha
-│   │   ├── laboratory.ts       # ferramentas interativas
-│   │   ├── library.ts          # biblioteca e modelos
-│   │   └── about.ts            # conceito e método Koor
-│   └── styles/
-│       ├── base.css            # tokens e base
-│       ├── editorial.css       # componentes e grids
-│       └── refinements.css     # ajustes visuais e responsividade
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── vercel.json
-```
+Foi a partir dessa perspectiva que decidi reunir conceitos de administração, educação, filosofia e psicologia organizacional em um só lugar. Meu objetivo não era construir uma coleção de frases motivacionais, mas um espaço em que eu pudesse **estudar fundamentos, confrontar ideias e transformá-las em ações concretas**.
 
-### Rodar localmente
+Como desenvolvedor, percebi que poderia utilizar meus conhecimentos técnicos para tornar esse aprendizado mais próximo da prática. Assim, uni dois interesses que fazem parte da minha formação: **desenvolvimento de software e desenvolvimento de pessoas**.
 
-Requer Node.js atualizado (recomendado **22 LTS** ou superior).
+A Koor é, portanto, tanto um projeto de tecnologia quanto um compromisso pessoal de evolução como líder. Ela foi criada para apoiar minha própria jornada de aprendizagem e compartilhá-la com outras pessoas que também desejam aprimorar sua forma de liderar.
 
-```bash
-npm install
-npm run dev
-```
+## A proposta
 
-O Vite informará a URL do servidor de desenvolvimento, geralmente `http://localhost:5173`.
+O nome **Koor** representa a ideia de coordenação: organizar esforços, criar alinhamento e dar direção sem perder de vista as pessoas. A plataforma busca traduzir fundamentos em situações reais de liderança, permitindo que o conteúdo seja revisitado, questionado e aplicado.
 
-### Verificar tipos e compilar
+O hub está estruturado em cinco trilhas:
 
-```bash
-npm run typecheck
-npm run build
-npm run preview
-```
+- **Gestão de pessoas e autonomia:** desenvolver capacidades, delegar com responsabilidade e estimular o protagonismo.
+- **Comunicação e feedback:** praticar escuta ativa, conversas difíceis e alinhamento de expectativas.
+- **Tomada de decisão e pensamento crítico:** reconhecer vieses, organizar critérios e decidir sob incerteza.
+- **Gestão de conflitos e negociação:** compreender interesses, construir acordos e enfrentar divergências de forma construtiva.
+- **Ética e confiança:** desenvolver coerência, transparência e responsabilidade nas relações de trabalho.
 
-A compilação gera a pasta **dist/**. O TypeScript faz parte do código-fonte; o navegador recebe JavaScript compilado. Não é necessário inserir scripts compilados manualmente no repositório.
+Os conteúdos incluem fundamentos teóricos, análises de situações, contrapontos, indicadores e planos de aplicação. O **Laboratório** oferece ferramentas para preparar conversas, refletir sobre delegação e estruturar decisões. A **Biblioteca** reúne os autores e materiais que fundamentam as trilhas.
 
-### Publicar pela Vercel
+O projeto foi desenvolvido em **TypeScript, HTML e CSS**, com **Vite**, por meio de uma experiência editorial e interativa. As anotações de progresso ficam armazenadas localmente no navegador.
 
-1. Na Vercel, selecione **Add New → Project** e importe este repositório GitHub.
-2. Escolha **Framework Preset: Vite**; a configuração `vercel.json` já define `npm run build` e `dist`.
-3. Defina **Root Directory: `./`** e publique.
-4. Commits posteriores na branch `main` poderão criar novos deploys automaticamente, quando a integração estiver configurada.
+## Leituras que influenciaram a construção
 
-**Não** há variáveis de ambiente obrigatórias ou backend nesta versão.
+Três obras tiveram especial importância para as reflexões sobre propósito, serviço e amadurecimento da liderança:
 
-## Atualização editorial das imagens e do rodapé
+- **Simon Sinek — _Comece pelo porquê_ / _Start with Why_ (2009):** a importância de compreender e comunicar o propósito das ações. [Referência](https://simonsinek.com/books/start-with-why).
+- **James C. Hunter — _O monge e o executivo_ / _The Servant_ (1998):** liderança como serviço, responsabilidade e desenvolvimento das relações. [Referência](https://www.penguinrandomhouse.com/books/84466/the-servant-by-james-c-hunter/).
+- **Ram Charan, Stephen Drotter e James Noel — _Pipeline de liderança_ / _The Leadership Pipeline_ (2000):** a evolução das responsabilidades e competências à medida que se assume a liderança de outras pessoas. [Referência](https://ram-charan.com/books/the-leadership-pipeline/).
 
-O site utiliza imagens de liderança geradas por inteligência artificial, com tratamento e otimização WebP para melhorar o carregamento. Os arquivos `koor-collaboration.webp`, `koor-mentoring.webp`, `koor-workshop.webp` e `koor-footer.webp` ilustram respectivamente coordenação, mentoria, trabalho coletivo e encerramento de uma sessão. São imagens conceituais, não registros fotográficos de reuniões reais.
+Também foram consultados estudos de autores como Paulo Freire, Amy Edmondson, Peter Drucker, Daniel Goleman, Mary Parker Follett, Daniel Kahneman e outros pesquisadores das áreas de administração, educação e comportamento organizacional.
 
-O rodapé é intencionalmente compacto: reúne uma fotografia panorâmica, navegação essencial e atribuição explícita de autoria a **Arthur Andrade Cunha**. As referências bibliográficas completas continuam disponíveis na Biblioteca e neste README.
-
-## Direção de arte e identidade
-
-A Koor foi pensada como uma experiência editorial, não um template de SaaS. Usa grid assimétrico, tipografia de contraste e movimentos funcionais, com leitura clara e espaço negativo. O núcleo visual deriva do manual de marca fornecido pelo autor: **marrom Koor `#6B3E26`**, **areia `#EADBCF`**, **cacau `#2E1A10`** e **off-white `#FAF6F1`**.
-
-As três fotografias editoriais foram **geradas por inteligência artificial para o protótipo** e ilustram situações hipotéticas: reunião, coaching e workshop. Não representam pessoas ou eventos específicos.
-
-## Referências bibliográficas e créditos intelectuais
-
-Os textos são **sínteses pedagógicas e interpretações aplicadas**, não transcrições das obras. A presença de um autor na biblioteca identifica influência conceitual, **não** participação ou endosso à Koor. As ferramentas e os indicadores são materiais didáticos próprios, sem pretensão de validação psicométrica.
-
-### Três obras especialmente relacionadas à concepção
-
-- **Simon Sinek** — *Start with Why / Comece pelo porquê* (2009). [Site do autor](https://simonsinek.com/books/start-with-why).
-- **James C. Hunter** — *The Servant / O monge e o executivo* (1998). [Editora](https://www.penguinrandomhouse.com/books/84466/the-servant-by-james-c-hunter/).
-- **Ram Charan, Stephen Drotter e James Noel** — *The Leadership Pipeline / Pipeline de liderança* (2000). [Página do autor](https://ram-charan.com/books/the-leadership-pipeline/).
-
-Os links externos de resumos indicados durante a concepção foram utilizados como **materiais de consulta**, sem redistribuir PDFs ou textos protegidos por direitos autorais neste repositório.
-
-### Catálogo de referências presentes no hub
+<details>
+<summary><strong>Consultar as 24 referências bibliográficas do projeto</strong></summary>
 
 - **Paulo Freire** — *Pedagogia da autonomia* (1996). [Consultar referência](https://bds.unb.br/handle/123456789/622).
 - **Richard M. Ryan & Edward L. Deci** — *Self-determination theory and the facilitation of intrinsic motivation* (2000). [Consultar referência](https://pubmed.ncbi.nlm.nih.gov/11392867/).
@@ -137,14 +80,23 @@ Os links externos de resumos indicados durante a concepção foram utilizados co
 - **James C. Hunter** — *The Servant / O monge e o executivo* (1998). [Consultar referência](https://www.penguinrandomhouse.com/books/84466/the-servant-by-james-c-hunter/).
 - **Ram Charan, Stephen Drotter & James Noel** — *The Leadership Pipeline / Pipeline de liderança* (2000). [Consultar referência](https://ram-charan.com/books/the-leadership-pipeline/).
 
-### Produção e créditos
+</details>
 
-- **Arthur Andrade Cunha:** autoria, concepção do projeto, direcionamento editorial e de identidade, seleção dos materiais e decisões de produto.
-- **Assistência de IA:** apoio na redação de sínteses, organização do acervo, geração de imagens e desenvolvimento/refatoração do frontend. O uso de IA não transfere a autoria ou o direcionamento da proposta a terceiros.
-- **Pesquisadores e autores listados acima:** créditos pelas ideias e obras referenciadas, sem afiliação ou endosso implícitos.
+**Sobre as referências:** as explicações publicadas na Koor são sínteses e interpretações didáticas, não transcrições integrais dos livros e artigos. A menção aos autores indica influência intelectual e não significa afiliação, participação ou endosso ao projeto.
 
-## Limitações e próximos passos
+## Autoria, créditos e direitos autorais
 
-Esta versão é educativa, sem autenticação ou acompanhamento institucional. Recomendações não substituem avaliação especializada nem políticas de organizações. Uma evolução futura pode incluir persistência segura por usuário, editores de conteúdo, trilhas com acessibilidade ampliada, testes automatizados e relatórios de aprendizagem. Priorize esses recursos a partir de necessidades validadas.
+**Arthur Andrade Cunha** é o idealizador e responsável pela direção conceitual, editorial e de produto da **Koor — Gestão Inteligente**, incluindo a seleção dos temas e as decisões de desenvolvimento e identidade visual.
 
-**Direitos e utilização:** a publicação do código neste repositório não implica concessão de licença open-source para uso externo. Entre em contato com o autor antes de redistribuir ou comercializar a marca, os textos e o código.
+O projeto contou com **assistência de inteligência artificial** na organização de conteúdos, elaboração de sínteses, produção de imagens ilustrativas e implementação de partes do frontend. As fotografias geradas por IA são representações conceituais, não registros documentais de pessoas ou eventos reais.
+
+Os **direitos autorais sobre as obras de terceiros** citadas permanecem com seus respectivos titulares. A proteção e as possibilidades de uso de conteúdo gerado por IA podem variar conforme a legislação aplicável; a declaração de direitos reservados acima diz respeito às contribuições autorais originais de Arthur Andrade Cunha.
+
+**© 2026 Arthur Andrade Cunha — Koor: Gestão Inteligente.**  
+**Todos os direitos reservados sobre o material autoral original.** Não foi concedida licença open-source para reutilização ou redistribuição deste projeto.
+
+---
+
+*Criado a partir da convicção de que liderar melhor não é simplesmente uma característica pessoal: é uma construção contínua que exige estudo, consciência e prática.*
+
+**[Conheça a Koor](https://koor-gestao-inteligente.vercel.app/#inicio)** · **[Acesse a biblioteca](https://koor-gestao-inteligente.vercel.app/#biblioteca)**
